@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>修图任务 · 手机预览工作台</title>
+  <style>
+    :root { --bg:#f6f7fb; --card:#fff; --text:#202124; --muted:#6b7280; --line:#e5e7eb; --brand:#4263eb; --good:#16a34a; --bad:#dc2626; }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--text);}
+    header{position:sticky;top:0;z-index:10;background:rgba(246,247,251,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 16px 12px;}
+    h1{font-size:20px;margin:0 0 6px;font-weight:750} .sub{font-size:13px;color:var(--muted);line-height:1.45}
+    main{padding:14px 12px 40px;max-width:860px;margin:0 auto}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin:0 0 14px;box-shadow:0 6px 18px rgba(15,23,42,.05)}
+    h2{font-size:17px;margin:0 0 10px}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:12px;background:#eef2ff;color:#3730a3;margin:0 6px 8px 0}.pill.good{background:#dcfce7;color:#166534}.pill.bad{background:#fee2e2;color:#991b1b}.pill.warn{background:#fef3c7;color:#92400e}
+    img{width:100%;display:block;border-radius:14px;border:1px solid var(--line);background:#eee}.meta{font-size:13px;line-height:1.55;color:var(--muted);margin:10px 0 0}.note{background:#f8fafc;border-left:4px solid var(--brand);padding:10px 12px;border-radius:12px;font-size:14px;line-height:1.6;margin-top:10px}.grid{display:grid;grid-template-columns:1fr;gap:14px}.choice{border-top:1px dashed var(--line);padding-top:12px;margin-top:12px}.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.fakebtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-size:13px;color:#374151}.winner{outline:3px solid rgba(22,163,74,.22)}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:8px}.compare div{font-size:12px;color:var(--muted);text-align:center}.small{font-size:12px;color:var(--muted)}
+    @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.hero{grid-column:1/-1}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>修图任务 · 手机预览工作台</h1>
+  <div class="sub">目标：去掉照片中你周边的人。实验不同交互方式：我把结果做成 HTML 页面，你在手机端直接查看，然后在微信里反馈选择。</div>
+</header>
+<main>
+  <section class="card hero">
+    <h2>任务结论</h2>
+    <span class="pill good">推荐：自然裁切版</span><span class="pill warn">不推荐：硬擦除补背景</span><span class="pill bad">柔焦背景版效果更差</span>
+    <div class="note">因为两侧人物遮挡面积很大，原始背景信息缺失。如果强行“保持原图尺寸和背景不变”，算法只能凭空补，容易假。当前最自然路线是：牺牲一点画幅，通过裁切保留你作为主体。</div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>0. 原图</h2>
+      <img src="original.jpg" alt="原图">
+      <p class="meta">周边人物占据左右两侧较大区域，背景被遮挡严重。</p>
+    </article>
+
+    <article class="card winner">
+      <h2>1. 自然裁切版（推荐）</h2>
+      <img src="natural_crop.jpg" alt="自然裁切版">
+      <p class="meta">优点：最真实、没有补绘痕迹、主体突出。缺点：牺牲原图宽度。</p>
+      <div class="choice"><b>如果接受这版：</b><div class="btnrow"><span class="fakebtn">微信回复：用这版</span><span class="fakebtn">微信回复：再裁紧一点</span></div></div>
+    </article>
+
+    <article class="card">
+      <h2>2. 原尺寸硬擦除版</h2>
+      <img src="erased_original_size.jpg" alt="原尺寸硬擦除版">
+      <p class="meta">优点：保留原尺寸。缺点：两侧补背景明显不自然，桌面和空间结构容易变形。</p>
+    </article>
+
+    <article class="card">
+      <h2>3. 柔焦背景版</h2>
+      <img src="soft_background.jpg" alt="柔焦背景版">
+      <p class="meta">尝试用虚化遮盖补绘痕迹，但整体真实感下降，所以不建议继续这个方向。</p>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>下一步你可以怎么反馈</h2>
+    <div class="btnrow">
+      <span class="fakebtn">A：用自然裁切版</span>
+      <span class="fakebtn">B：裁得更紧，只留上半身</span>
+      <span class="fakebtn">C：做成 LinkedIn/商务头像比例</span>
+      <span class="fakebtn">D：换干净会议室背景</span>
+    </div>
+    <p class="small">这个 HTML 只是预览页，按钮不会直接提交；你在微信里回复 A/B/C/D 或具体意见即可。</p>
+  </section>
+</main>
+</body>
+</html>
