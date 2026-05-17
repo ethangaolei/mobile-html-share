@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# local/private config
+*.env
+.env
+config.local.*
+
+# generated temp files
+.tmp/
+tmp/
