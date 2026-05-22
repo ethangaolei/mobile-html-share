@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>诺华内部 AI 组织构建计划 v12</title>
+<style>
+@page{size:A4 landscape;margin:10mm}
+:root{--navy:#071f3d;--blue:#1d4e89;--ink:#102033;--muted:#617083;--bg:#f5f7fb;--line:#8aa1b6;--human-bg:#eefaf3;--human-b:#69c28a;--ai-bg:#eaf4ff;--ai-b:#6ba7e5;--cross-bg:#f6f0ff;--cross-b:#aa8be8;--risk:#b42318;--gold:#b7791f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--ink);padding:22px 20px 40px}.page{max-width:1480px;margin:0 auto}.header{text-align:center;margin-bottom:14px}.eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:800}.header h1{font-size:25px;margin:5px 0 4px;color:var(--navy);letter-spacing:-.2px}.sub{font-size:12px;color:var(--muted)}.legend{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:10px 0 14px}.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#4c5b6d}.lbox{width:11px;height:11px;border-radius:3px}.h{background:var(--human-b)}.a{background:var(--ai-b)}.c{background:var(--cross-b)}.solid{width:26px;height:2px;background:var(--blue)}.dash{width:26px;border-top:2px dashed var(--gold)}
+.chart{position:relative;background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid #d6e0ea;border-radius:18px;padding:18px 18px 16px;box-shadow:0 8px 24px rgba(16,32,51,.06);overflow:hidden}#svg-overlay{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:1}.layers{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .9fr 1.05fr 1.05fr 1.05fr;gap:12px}.node{border:1.7px solid;border-radius:13px;padding:10px 12px;background:white;min-height:92px;box-shadow:0 2px 5px rgba(16,32,51,.05)}.human{background:var(--human-bg);border-color:var(--human-b)}.ai{background:var(--ai-bg);border-color:var(--ai-b)}.cross{background:var(--cross-bg);border-color:var(--cross-b)}.top{grid-column:2/5;text-align:center;min-height:108px}.rm-area{grid-column:1/3}.cso{grid-column:3/4}.msi{grid-column:4/5}.tdi{grid-column:5/6}.bmm-area{grid-column:1/3}.agent-area{grid-column:3/6}.cross-area{grid-column:1/6}.gap{height:34px;grid-column:1/6}.badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-bottom:4px}.human .badge{background:#d8f5e0;color:#075e36}.ai .badge{background:#cfe6ff;color:#174c8f}.cross .badge{background:#eee5ff;color:#5b21b6}.name{font-size:15px;font-weight:800;color:var(--navy);line-height:1.25}.role{font-size:11px;color:var(--muted);margin:3px 0 5px}.funcs{font-size:11px;line-height:1.48;color:#2a3a4e;margin:0;padding-left:16px}.funcs li{margin:1px 0}.section-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8391a3;font-weight:800;text-align:center;margin-bottom:5px}.rm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.rm-grid .node{min-height:82px;padding:8px 9px}.rm-grid .name{font-size:12px}.rm-grid .funcs{font-size:10px}.bmm-area .node{min-height:96px}.agents-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.agents-grid .node{min-height:112px;padding:8px 9px}.agents-grid .name{font-size:12px}.agents-grid .role{font-size:10px}.agents-grid .funcs{font-size:9.5px}.cross-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.cross-grid .node{min-height:88px;padding:8px 9px}.cross-grid .name{font-size:12px}.cross-grid .funcs{font-size:9.5px}.principle{margin-top:12px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.principle-card{background:white;border:1px solid #d7e0ea;border-radius:12px;padding:10px 12px;font-size:11px;line-height:1.5}.principle-card b{color:var(--navy)}.matrix{margin-top:14px;width:100%;border-collapse:collapse;font-size:11px;background:white}.matrix th{background:var(--blue);color:white;text-align:left;padding:8px}.matrix td{border:1px solid #d7e0ea;padding:8px;vertical-align:top}.matrix tr:nth-child(even) td{background:#f8fafc}.relation-section{margin-top:14px;background:white;border:1px solid #d7e0ea;border-radius:14px;padding:12px}.relation-title{font-size:12px;font-weight:800;color:var(--navy);margin-bottom:8px}.relation-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.relation-card{border:1px solid #d7e0ea;border-radius:11px;padding:9px 10px;background:#fbfcfe;font-size:10.5px;line-height:1.45}.relation-card b{display:block;color:var(--blue);font-size:11px;margin-bottom:4px}.relation-card span{display:block;color:#344054}.plan-section{margin-top:16px;background:white;border:1px solid #d7e0ea;border-radius:14px;padding:14px 15px}.plan-section h2{font-size:16px;color:var(--navy);margin:0 0 9px;border-left:4px solid var(--blue);padding-left:8px}.plan-section p{font-size:11.5px;line-height:1.62;color:#344054;margin:6px 0}.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.plan-card{border:1px solid #d7e0ea;border-radius:12px;background:#fbfcfe;padding:10px 11px;font-size:11px;line-height:1.52}.plan-card b{display:block;color:var(--navy);font-size:12px;margin-bottom:4px}.plan-card ul{margin:4px 0 0;padding-left:16px}.plan-card li{margin:2px 0}.plan-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:11px;background:white}.plan-table th{background:#e8edf2;color:var(--navy);font-weight:800;text-align:left;padding:8px;border:1px solid #d1d9e0}.plan-table td{padding:8px;border:1px solid #d1d9e0;vertical-align:top;line-height:1.5}.plan-table tr:nth-child(even) td{background:#f8fafc}.principle-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}.principle-item{border-left:4px solid var(--blue);background:#f7faff;border-radius:0 10px 10px 0;padding:8px 10px;font-size:11px;line-height:1.5}.footer{text-align:center;color:#8a98a8;font-size:10px;margin-top:16px}
+@media print{body{padding:0;background:white}.page{max-width:none}.chart,.principle,.matrix{break-inside:avoid}.node{box-shadow:none}}
+@media(max-width:900px){@page{size:A4 portrait}.layers,.principle,.relation-grid,.plan-grid,.principle-list{display:block}.top,.rm-area,.cso,.msi,.tdi,.bmm-area,.agent-area,.cross-area,.gap{grid-column:auto;margin-bottom:12px}.rm-grid,.agents-grid,.cross-grid{grid-template-columns:1fr}.chart{overflow:visible}#svg-overlay{display:none}.matrix{font-size:12px;display:block;overflow-x:auto}.matrix th,.matrix td{min-width:150px}}
+</style>
+</head>
+<body><div class="page">
+  <div class="header"><div class="eyebrow">讨论稿 v12.0 · AI组织构建计划版</div><h1>诺华内部 AI 组织构建计划</h1><p class="sub">把 AI 智能体纳入组织分工：人负责判断与责任，AI 负责事实、规则、草案和闭环</p></div>
+  <div class="legend"><div class="legend-item"><span class="lbox h"></span>人类责任角色</div><div class="legend-item"><span class="lbox a"></span>AI 数字岗位</div><div class="legend-item"><span class="lbox c"></span>跨部门专业角色</div><div class="legend-item"><span class="solid"></span>汇报/管理关系</div></div>
+
+  <section id="chart" class="chart">
+    <svg id="svg-overlay"></svg>
+    <div class="layers">
+      <div id="ceo" class="node human top"><div class="badge">战略责任人</div><div class="name">全国总监</div><div class="role">最终业务负责人 / AI 组织授权人</div><ul class="funcs"><li>定义全国合作业务目标、增长优先级和资源取舍</li><li>决定伙伴策略、重大 JCC 立场、人员数量和奖金原则</li><li>对业务结果、重大合规风险与跨部门取舍承担最终责任</li></ul></div>
+      <div class="gap"></div>
+      <div class="rm-area"><div class="section-label">区域经营线：6 大区</div><div id="rm-group" class="rm-grid">
+        <div id="rm1" class="node human"><div class="badge">RM</div><div class="name">华北大区经理</div><ul class="funcs"><li>区域达成</li><li>重点医院</li><li>伙伴执行</li></ul></div>
+        <div id="rm2" class="node human"><div class="badge">RM</div><div class="name">华东大区经理</div><ul class="funcs"><li>区域达成</li><li>重点医院</li><li>伙伴执行</li></ul></div>
+        <div id="rm3" class="node human"><div class="badge">RM</div><div class="name">华南大区经理</div><ul class="funcs"><li>区域达成</li><li>重点医院</li><li>伙伴执行</li></ul></div>
+        <div id="rm4" class="node human"><div class="badge">RM</div><div class="name">华中大区经理</div><ul class="funcs"><li>区域达成</li><li>重点医院</li><li>伙伴执行</li></ul></div>
+        <div id="rm5" class="node human"><div class="badge">RM</div><div class="name">西部大区经理</div><ul class="funcs"><li>区域达成</li><li>重点医院</li><li>伙伴执行</li></ul></div>
+        <div id="rm6" class="node human"><div class="badge">RM</div><div class="name">东北大区经理</div><ul class="funcs"><li>区域达成</li><li>重点医院</li><li>伙伴执行</li></ul></div>
+      </div></div>
+      <div id="cso" class="node human cso"><div class="badge">合作治理中枢</div><div class="name">合作策略经理</div><div class="role">合同 · 合规 · 伙伴治理 · JCC 运营</div><ul class="funcs"><li>拥有伙伴治理规则与合作流程</li><li>管理合同文件、合规动作和 JCC 议题池</li><li>把 AI 发现的问题转化为跨部门闭环</li></ul></div>
+      <div id="msi" class="node ai msi"><div class="badge">直属全国总监</div><div class="name">市场洞察智能体</div><div class="role">数字洞察分析员</div><ul class="funcs"><li>汇总 BMM 协访和县市洞察</li><li>识别市场趋势、客户观念和竞品信号</li><li>形成策略洞察摘要</li></ul></div>
+      <div id="tdi" class="node ai tdi"><div class="badge">直属全国总监</div><div class="name">团队发展智能体</div><div class="role">数字人才发展助理</div><ul class="funcs"><li>追踪团队能力成长</li><li>识别发展短板和培训需求</li><li>协助形成发展计划草案</li></ul></div>
+      <div class="gap"></div>
+      <div id="bmm" class="bmm-area"><div class="section-label">区域市场执行：22 BMM</div><div class="node human"><div class="badge">向大区经理汇报</div><div class="name">BMM 团队（22人）</div><div class="role">市场策略转译者 / 一线洞察输入者</div><ul class="funcs"><li>将总体市场策略转译到区域与县市场景</li><li>输入协访发现、客户观念变化、县市差异和竞品信号</li><li>与市场洞察智能体共同沉淀组织洞察</li></ul></div></div>
+      <div class="agent-area"><div class="section-label">合作策略经理管理的 AI 数字岗位群</div><div class="agents-grid">
+        <div id="kbi" class="node ai"><div class="badge">经营分析</div><div class="name">业务数据智能体</div><div class="role">数字经营分析员</div><ul class="funcs"><li>达成/增长/环比</li><li>伙伴与医院看板</li><li>异常和问题清单</li></ul></div>
+        <div id="ccgi" class="node ai"><div class="badge">合规合作</div><div class="name">合规合作智能体</div><div class="role">数字证据链管理员</div><ul class="funcs"><li>合规材料初筛</li><li>合作文件台账</li><li>风险和整改追踪</li></ul></div>
+        <div id="jcci" class="node ai"><div class="badge">秘书处</div><div class="name">JCC 管理智能体</div><div class="role">数字秘书处</div><ul class="funcs"><li>议题池</li><li>决策包草案</li><li>纪要与行动项</li></ul></div>
+        <div id="cai" class="node ai"><div class="badge">能力评估</div><div class="name">合作能力智能体</div><div class="role">数字能力评估员</div><ul class="funcs"><li>伙伴能力评估</li><li>团队能力画像</li><li>改善建议草案</li></ul></div>
+        <div id="opsi" class="node ai"><div class="badge">运营闭环</div><div class="name">行动追踪智能体</div><div class="role">数字 PMO</div><ul class="funcs"><li>责任人/截止日</li><li>未关闭事项</li><li>复盘归档</li></ul></div>
+      </div></div>
+      <div class="gap"></div>
+      <div class="cross-area"><div class="section-label">跨部门专业规则层：定义口径、边界和复核机制</div><div class="cross-grid">
+        <div id="mkt" class="node cross"><div class="badge">策略边界</div><div class="name">市场部</div><ul class="funcs"><li>策略口径</li><li>话术边界</li><li>洞察审核</li></ul></div>
+        <div id="dee" class="node cross"><div class="badge">数据口径</div><div class="name">数据 EE</div><ul class="funcs"><li>指标定义</li><li>数据质量</li><li>分析方法</li></ul></div>
+        <div id="train" class="node cross"><div class="badge">能力模型</div><div class="name">培训部门</div><ul class="funcs"><li>能力模型</li><li>培训任务</li><li>知识评估</li></ul></div>
+        <div id="finance" class="node cross"><div class="badge">费用规则</div><div class="name">财务</div><ul class="funcs"><li>预算/付款</li><li>奖金口径</li><li>财务影响</li></ul></div>
+        <div id="biz" class="node cross"><div class="badge">履约规则</div><div class="name">商务</div><ul class="funcs"><li>合同履约</li><li>伙伴商务</li><li>流程要求</li></ul></div>
+        <div id="comp" class="node cross"><div class="badge">风险规则</div><div class="name">合规</div><ul class="funcs"><li>风险分级</li><li>合规定性</li><li>升级机制</li></ul></div>
+        <div id="legal" class="node cross"><div class="badge">法律边界</div><div class="name">法务</div><ul class="funcs"><li>合同解释</li><li>争议处理</li><li>法律风险</li></ul></div>
+      </div></div>
+    </div>
+  </section>
+
+  <div class="principle"><div class="principle-card"><b>人做什么：</b>目标、判断、授权、对外承诺、重大取舍和最终责任。</div><div class="principle-card"><b>AI 做什么：</b>事实整理、规则执行、异常发现、草案生成、证据链和行动追踪。</div><div class="principle-card"><b>一起做什么：</b>人基于 AI 的事实与选项做判断；跨部门定义规则，AI 持续执行并回写闭环。</div></div>
+
+  <div class="relation-section">
+    <div class="relation-title">图中不再画虚线；以下集中说明“规则 / 复核 / 协作”关系</div>
+    <div class="relation-grid">
+      <div class="relation-card"><b>BMM → 市场洞察智能体</b><span>输入协访发现、客户观念变化、县市差异和竞品信号；智能体输出洞察聚类、策略草案和培训需求提示。</span></div>
+      <div class="relation-card"><b>数据 EE → 业务数据智能体</b><span>定义达成、增长、环比、客户覆盖、重点医院等指标口径；复核看板逻辑和异常识别规则。</span></div>
+      <div class="relation-card"><b>市场部 → 市场洞察智能体</b><span>定义市场策略口径、话术边界和洞察转化原则；审核智能体输出能否进入正式策略讨论。</span></div>
+      <div class="relation-card"><b>培训部门 → 团队发展智能体</b><span>定义能力模型、培训任务和知识评估边界；接收能力短板与培训需求提示。</span></div>
+      <div class="relation-card"><b>财务 → JCC 管理智能体</b><span>提供预算、付款、奖金设置和财务影响规则；复核进入 JCC 的财务相关议题。</span></div>
+      <div class="relation-card"><b>商务 → 合规合作智能体</b><span>定义合同履约、伙伴商务流程和文件要求；复核合作文件缺口及履约相关问题。</span></div>
+      <div class="relation-card"><b>合规 → 合规合作智能体</b><span>定义合规文件、合规动作、风险分级和升级机制；对风险标记进行人工定性。</span></div>
+      <div class="relation-card"><b>法务 → 合规合作智能体</b><span>定义法律边界、合同解释路径和争议处理机制；提供正式法律判断，AI 只整理证据。</span></div>
+    </div>
+  </div>
+
+  <table class="matrix"><thead><tr><th>交互关系</th><th>主要交互内容</th><th>边界</th></tr></thead><tbody>
+    <tr><td>全国总监 ↔ 直属 AI</td><td>市场洞察、团队发展、重大风险、JCC 决策选项</td><td>AI 给事实和草案；全国总监做战略判断和授权</td></tr>
+    <tr><td>合作策略经理 ↔ AI 数字岗位群</td><td>业务数据、合作文件、合规证据、JCC、能力评估、行动追踪</td><td>AI 负责追踪和提醒；合作策略经理负责治理动作和跨部门闭环</td></tr>
+    <tr><td>大区经理 / BMM ↔ AI</td><td>区域经营、重点医院、客户覆盖、协访发现、县市差异</td><td>AI 发现异常和沉淀洞察；区域团队判断原因并执行行动</td></tr>
+    <tr><td>跨部门团队 ↔ AI</td><td>市场、数据、培训、财务、商务、合规、法务规则</td><td>专业部门定义规则并复核；AI 不替代专业定性</td></tr>
+  </tbody></table>
+
+
+  <section class="plan-section">
+    <h2>一、AI 组织的定义</h2>
+    <p><b>AI 组织不是“上线一批 AI 工具”，也不是“让 AI 替代管理者”。</b>AI 组织是把 AI 智能体作为组织内部的“数字岗位”纳入正式分工，使其承担稳定的信息处理、规则执行、证据整理、异常发现、草案生成和闭环追踪职能；同时，人类角色继续承担目标、判断、授权、对外承诺和最终责任。</p>
+    <p>在诺华内部合作业务场景中，AI 组织的本质是：把原先分散在报表、邮件、会议纪要、个人经验和跨部门沟通中的管理工作，重构为一套可见、可追踪、可复核、可沉淀的组织系统。</p>
+    <div class="plan-grid">
+      <div class="plan-card"><b>AI 是数字岗位</b>每个智能体都应有岗位使命、服务对象、输入来源、固定输出物、升级路径和责任边界。</div>
+      <div class="plan-card"><b>人是责任主体</b>AI 可以整理事实、提出选项和追踪任务，但不能替代人做业务、合规、财务、法务、医学或人事判断。</div>
+      <div class="plan-card"><b>跨部门定义规则</b>AI 的有效性来自组织批准的数据口径、流程规则、风险边界和专业知识，而不是模型自由发挥。</div>
+    </div>
+  </section>
+
+  <section class="plan-section">
+    <h2>二、AI 组织构建的目标</h2>
+    <table class="plan-table">
+      <tr><th>目标</th><th>含义</th><th>在本组织中的体现</th></tr>
+      <tr><td>从个人经验驱动转向组织能力驱动</td><td>减少对个人记忆、手工表格和临时沟通的依赖</td><td>业务数据、合同文件、合规证据、JCC 议题和市场洞察由智能体持续维护</td></tr>
+      <tr><td>从事后补救转向提前发现</td><td>让异常、缺口、风险和未关闭事项更早暴露</td><td>业务数据智能体、合规合作智能体和行动追踪智能体持续形成问题清单</td></tr>
+      <tr><td>从跨部门会签转向规则化协作</td><td>让专业部门的口径和边界提前进入流程</td><td>市场、数据 EE、培训、财务、商务、合规、法务定义规则，AI 执行和提醒</td></tr>
+      <tr><td>从会议事件转向管理闭环</td><td>会议不是终点，行动项关闭和知识沉淀才是终点</td><td>JCC 管理智能体和行动追踪智能体维护议题池、决策包、责任人和关闭状态</td></tr>
+    </table>
+  </section>
+
+  <section class="plan-section">
+    <h2>三、组织设计原则</h2>
+    <div class="principle-list">
+      <div class="principle-item"><b>1. 先设计岗位，再选择工具。</b><br>智能体首先是组织分工，不是软件功能。没有岗位职责，就没有稳定价值。</div>
+      <div class="principle-item"><b>2. 先定义边界，再扩大智能。</b><br>AI 的权限、输出用途和升级路径必须先清楚，否则会制造合规和责任风险。</div>
+      <div class="principle-item"><b>3. 先沉淀事实，再辅助判断。</b><br>AI 的第一价值不是替人判断，而是让管理事实更完整、更及时、更可追溯。</div>
+      <div class="principle-item"><b>4. 先建立闭环，再追求预测。</b><br>如果行动项、责任人和关闭状态没有沉淀，预测模型只会制造更多噪音。</div>
+      <div class="principle-item"><b>5. 人机协作必须可审计。</b><br>关键输入、AI 输出、人类确认和最终动作都应能被回看和复核。</div>
+      <div class="principle-item"><b>6. AI 不成为权力主体。</b><br>AI 可以进入组织图，但不拥有管理权、审批权、处罚权或对外承诺权。</div>
+    </div>
+  </section>
+
+  <section class="plan-section">
+    <h2>四、人机分工模型</h2>
+    <table class="plan-table">
+      <tr><th>工作类型</th><th>AI 负责</th><th>人负责</th><th>人机协作方式</th></tr>
+      <tr><td>事实整理</td><td>汇总数据、文件、纪要、行动项和历史记录</td><td>确认事实是否完整、口径是否正确</td><td>AI 生成事实包，人类角色确认关键事实</td></tr>
+      <tr><td>异常识别</td><td>基于规则发现达成、覆盖、文件、合规和关闭状态异常</td><td>判断异常原因、优先级和处理方式</td><td>AI 提出问题清单，人判断是否升级或采取行动</td></tr>
+      <tr><td>草案生成</td><td>生成洞察摘要、JCC 决策包、会议纪要、培训需求和改善建议</td><td>确认逻辑、语气、边界和正式结论</td><td>AI 出初稿，人修改、批准和对外使用</td></tr>
+      <tr><td>规则执行</td><td>按批准口径提醒、检查、归档和追踪</td><td>定义规则、批准规则、处理例外</td><td>跨部门定义规则，AI 执行，人处理例外</td></tr>
+      <tr><td>责任承担</td><td>不承担责任主体角色</td><td>承担业务、合规、财务、法务和管理责任</td><td>AI 留痕，人确认，组织可复核</td></tr>
+    </table>
+  </section>
+
+  <section class="plan-section">
+    <h2>五、AI 数字岗位体系</h2>
+    <table class="plan-table">
+      <tr><th>数字岗位</th><th>岗位使命</th><th>核心输入</th><th>固定输出</th><th>边界</th></tr>
+      <tr><td>业务数据智能体</td><td>把经营事实转化为可管理的问题清单</td><td>区域数据、伙伴表现、医院进展、客户覆盖、异常反馈</td><td>看板、趋势摘要、异常提示、待解决问题</td><td>不判断资源调整和业务责任归因</td></tr>
+      <tr><td>合规合作智能体</td><td>把合作文件和合规动作转化为可追踪的证据链</td><td>合作文件、合规材料、动作记录、整改状态</td><td>文件台账、缺口清单、风险标记、整改追踪</td><td>不做合规定性、法律解释或处罚建议</td></tr>
+      <tr><td>JCC 管理智能体</td><td>把 JCC 从会议管理升级为议题治理</td><td>伙伴问题、人员数量、奖金设置、重大风险、会议决策</td><td>议题池、决策包草案、纪要、行动项、关闭状态</td><td>不决定谈判立场、奖金方案或合作承诺</td></tr>
+      <tr><td>合作能力智能体</td><td>把伙伴和合作团队能力表现结构化</td><td>执行表现、文件质量、行动关闭、培训反馈、业务结果</td><td>能力画像、短板提示、改善建议草案</td><td>不直接评价个人绩效或决定合作关系</td></tr>
+      <tr><td>行动追踪智能体</td><td>让所有管理动作有责任人、有截止日、有关闭状态</td><td>会议纪要、JCC 决策、跨部门任务、整改事项</td><td>任务台账、逾期提醒、关闭报告、复盘归档</td><td>不替人催办敏感事项或改变责任归属</td></tr>
+      <tr><td>市场洞察智能体</td><td>把 BMM 协访和县市反馈沉淀为组织洞察</td><td>BMM 协访、客户观念、县市差异、竞品信号、市场反馈</td><td>洞察聚类、策略草案、区域差异、培训需求</td><td>不发布正式市场策略、医学内容或外部话术</td></tr>
+      <tr><td>团队发展智能体</td><td>把团队成长和能力短板转化为发展输入</td><td>能力反馈、培训记录、协访观察、任务表现</td><td>能力短板、发展建议、培训需求、计划草案</td><td>不做正式人员评价、晋升或绩效判断</td></tr>
+    </table>
+  </section>
+
+  <section class="plan-section">
+    <h2>六、治理与授权机制</h2>
+    <table class="plan-table">
+      <tr><th>治理要素</th><th>设计要求</th><th>责任角色</th></tr>
+      <tr><td>智能体授权</td><td>明确每个智能体能访问什么、能输出什么、输出给谁、是否需要人工确认</td><td>全国总监、合作策略经理、相关跨部门负责人</td></tr>
+      <tr><td>数据口径</td><td>业务指标、覆盖率、增长、伙伴表现、文件状态等必须有统一定义</td><td>数据 EE，业务负责人共同确认</td></tr>
+      <tr><td>专业规则</td><td>市场、培训、财务、商务、合规、法务规则必须前置进入智能体逻辑</td><td>对应专业部门</td></tr>
+      <tr><td>人工确认</td><td>所有涉及正式判断、对外沟通、资源调整、费用、合规和法律事项，必须人工确认</td><td>对应人类责任主体</td></tr>
+      <tr><td>审计留痕</td><td>记录输入来源、AI 输出、人类修改、最终动作和关闭结果</td><td>合作策略经理、行动追踪智能体、相关专业部门</td></tr>
+      <tr><td>例外处理</td><td>当 AI 输出与业务判断冲突，或规则无法覆盖特殊情况时，应进入人工复核</td><td>业务负责人和专业部门</td></tr>
+    </table>
+  </section>
+
+  <section class="plan-section">
+    <h2>七、组织运行机制</h2>
+    <div class="plan-grid">
+      <div class="plan-card"><b>经营例会机制</b><ul><li>业务数据智能体提供看板和异常清单</li><li>大区经理解释原因和行动</li><li>全国总监判断优先级和资源取舍</li></ul></div>
+      <div class="plan-card"><b>合作治理机制</b><ul><li>合作策略经理查看文件、合规、JCC 和行动追踪</li><li>AI 数字岗位群提供证据和待办</li><li>跨部门团队处理专业判断</li></ul></div>
+      <div class="plan-card"><b>市场洞察机制</b><ul><li>BMM 持续输入协访发现</li><li>市场洞察智能体聚类和归纳</li><li>市场部与培训部门判断转化方式</li></ul></div>
+      <div class="plan-card"><b>JCC 议题机制</b><ul><li>JCC 管理智能体维护议题池</li><li>合作策略经理准备议题和决策包</li><li>全国总监决定立场与授权边界</li></ul></div>
+      <div class="plan-card"><b>合规复核机制</b><ul><li>合规合作智能体整理证据链</li><li>合规和法务判断风险性质</li><li>行动追踪智能体跟进整改关闭</li></ul></div>
+      <div class="plan-card"><b>组织学习机制</b><ul><li>会议、问题、动作和复盘沉淀为知识</li><li>智能体复用历史经验</li><li>组织减少重复讨论和重复犯错</li></ul></div>
+    </div>
+  </section>
+
+  <section class="plan-section">
+    <h2>八、边界与风险控制</h2>
+    <table class="plan-table">
+      <tr><th>AI 不做什么</th><th>原因</th><th>替代机制</th></tr>
+      <tr><td>不做合规定性</td><td>合规判断涉及规则解释、事实背景和责任承担</td><td>AI 整理证据链，合规负责人定性</td></tr>
+      <tr><td>不做法律意见</td><td>法律意见必须由授权法务角色提供</td><td>AI 汇总合同、事实和争议点，法务判断</td></tr>
+      <tr><td>不自动决定费用、奖金或付款</td><td>涉及财务授权和合作承诺</td><td>AI 整理依据和选项，财务/商务/全国总监确认</td></tr>
+      <tr><td>不直接评价人员绩效</td><td>人员评价涉及管理判断和组织影响</td><td>AI 提供能力观察和培训需求，管理者判断</td></tr>
+      <tr><td>不发布市场话术或医学内容</td><td>涉及医学、市场和合规边界</td><td>AI 生成草案，市场、医学和合规审核</td></tr>
+      <tr><td>不替代对外伙伴沟通</td><td>伙伴沟通需要关系判断、语气控制和授权边界</td><td>AI 准备材料，人类角色对外沟通</td></tr>
+    </table>
+  </section>
+
+  <section class="plan-section">
+    <h2>九、完整组织构建结论</h2>
+    <p>诺华内部 AI 组织的构建，不应被理解为“给现有岗位配 AI 工具”，而应被理解为“在人类岗位之外，增加一组承担稳定组织职能的数字岗位”。这些数字岗位负责让事实更及时、规则更一致、问题更早暴露、会议更有闭环、知识更可复用。</p>
+    <p>这套组织的核心不是提高单点效率，而是重构管理系统：全国总监获得更清晰的经营态势和决策选项；合作策略经理获得跨部门治理抓手；大区经理获得区域问题发现与行动追踪能力；BMM 的一线洞察变成组织资产；跨部门团队的专业规则被持续执行；AI 智能体成为组织能力的放大器，而不是责任的替代者。</p>
+  </section>
+
+  <div class="footer">AI 智能体是数字岗位，不是工具插件；AI 进入组织图，但不成为责任主体。</div>
+</div>
+<script>
+(function(){
+function draw(){
+ const chart=document.getElementById('chart'), svg=document.getElementById('svg-overlay'); if(!chart||!svg)return; while(svg.firstChild)svg.removeChild(svg.firstChild);
+ const cr=chart.getBoundingClientRect(), H=chart.scrollHeight, W=cr.width; svg.setAttribute('width',W); svg.setAttribute('height',H); svg.style.height=H+'px';
+ const ns='http://www.w3.org/2000/svg'; const defs=document.createElementNS(ns,'defs');
+ function marker(id,color){const m=document.createElementNS(ns,'marker');m.setAttribute('id',id);m.setAttribute('markerWidth','7');m.setAttribute('markerHeight','7');m.setAttribute('refX','6');m.setAttribute('refY','3.5');m.setAttribute('orient','auto');const p=document.createElementNS(ns,'polygon');p.setAttribute('points','0 0, 7 3.5, 0 7');p.setAttribute('fill',color);m.appendChild(p);defs.appendChild(m)} marker('arr','#1d4e89'); svg.appendChild(defs);
+ function box(id){const e=document.getElementById(id); if(!e)return null; const r=e.getBoundingClientRect(); return {cx:r.left+r.width/2-cr.left, cy:r.top+r.height/2-cr.top, top:r.top-cr.top, bot:r.bottom-cr.top, left:r.left-cr.left, right:r.right-cr.left}}
+ function line(x1,y1,x2,y2,opt={}){const l=document.createElementNS(ns,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);l.setAttribute('stroke',opt.color||'#1d4e89');l.setAttribute('stroke-width',opt.w||1.7); if(opt.arrow)l.setAttribute('marker-end','url(#arr)'); svg.appendChild(l)}
+ function label(txt,x,y){const t=document.createElementNS(ns,'text');t.setAttribute('x',x);t.setAttribute('y',y);t.setAttribute('font-size','10');t.setAttribute('font-weight','700');t.setAttribute('fill','#596879');t.setAttribute('text-anchor','middle');t.textContent=txt;svg.appendChild(t)}
+ function bus(parent, children, text){const p=box(parent); const cs=children.map(box).filter(Boolean); if(!p||!cs.length)return; const top=Math.min(...cs.map(c=>c.top)); const y=p.bot+(top-p.bot)*0.5; line(p.cx,p.bot,p.cx,y); line(Math.min(...cs.map(c=>c.cx)),y,Math.max(...cs.map(c=>c.cx)),y); cs.forEach(c=>line(c.cx,y,c.cx,c.top-3,{arrow:true})); if(text)label(text,p.cx,y-5)}
+ bus('ceo',['rm-group','cso','msi','tdi'],'授权 / 管理'); bus('cso',['kbi','ccgi','jcci','cai','opsi'],'管理 AI 数字岗位');
+ const rg=box('rm-group'), bmm=box('bmm'); if(rg&&bmm)line(rg.cx,rg.bot,rg.cx,bmm.top-3,{arrow:true});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(draw,180));else setTimeout(draw,180); window.addEventListener('resize',()=>setTimeout(draw,180));
+})();
+</script>
+</body></html>
