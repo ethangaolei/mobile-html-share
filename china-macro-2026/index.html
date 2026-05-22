@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国经济2026：特朗普访华后的路径推演</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#d4a017;--red:#c0392b;--text:#e0e0e0;--muted:#888;--w:800px}
+body{font-family:'Noto Sans SC',sans-serif;background:#0d0d0d;color:var(--text);overflow-x:hidden}
+.section{width:100%;padding:80px 40px;display:flex;flex-direction:column;align-items:center}
+.inner{width:100%;max-width:var(--w)}
+.fade{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade.visible{opacity:1;transform:none}
+
+/* COVER */
+#cover{background:#0d0d0d;min-height:100vh;justify-content:center;position:relative;overflow:hidden}
+#cover::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 50%,rgba(192,57,43,.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(212,160,23,.08) 0%,transparent 50%)}
+.cover-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.cover-title{font-family:'Noto Serif SC',serif;font-size:clamp(52px,8vw,96px);font-weight:900;line-height:1.05;color:#fff;margin-bottom:20px}
+.cover-title span{color:var(--red)}
+.cover-sub{font-size:20px;color:var(--muted);margin-bottom:48px;font-weight:300}
+.cover-date{font-size:13px;letter-spacing:3px;color:var(--gold);border-top:1px solid rgba(212,160,23,.3);padding-top:20px;display:inline-block}
+.cover-line{width:60px;height:3px;background:var(--red);margin-bottom:32px}
+
+/* STAT CARDS */
+#snapshot{background:#111827}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:40px}
+.card{background:#1a2035;padding:36px 28px}
+.card-num{font-family:'Noto Serif SC',serif;font-size:clamp(48px,7vw,80px);font-weight:900;color:var(--gold);line-height:1}
+.card-unit{font-size:18px;color:var(--gold);opacity:.7}
+.card-label{font-size:13px;color:var(--muted);margin-top:10px;letter-spacing:1px}
+.card-note{font-size:12px;color:#555;margin-top:6px}
+.card.red .card-num{color:var(--red)}
+.card.green .card-num{color:#27ae60}
+
+/* SECTION HEADERS */
+.sec-tag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.sec-title{font-family:'Noto Serif SC',serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:#fff;margin-bottom:32px;line-height:1.2}
+.divider{width:40px;height:2px;background:var(--gold);margin-bottom:32px}
+
+/* PRESSURE SECTION */
+#pressure{background:#0f172a}
+.data-row{display:flex;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid #1e293b}
+.data-row:last-child{border-bottom:none}
+.data-big{font-family:'Noto Serif SC',serif;font-size:clamp(36px,5vw,56px);font-weight:900;min-width:160px}
+.data-big.miss{color:var(--red)}
+.data-big.ok{color:var(--gold)}
+.data-desc{font-size:15px;color:var(--muted);line-height:1.6}
+.data-desc strong{color:var(--text);display:block;margin-bottom:4px}
+.miss-tag{font-size:11px;background:rgba(192,57,43,.2);color:var(--red);padding:2px 8px;border-radius:2px;letter-spacing:1px;margin-left:8px;vertical-align:middle}
+
+/* TRUMP VISIT */
+#visit{background:#1a0a08}
+.timeline{margin-top:40px;position:relative;padding-left:24px;border-left:2px solid rgba(192,57,43,.4)}
+.tl-item{margin-bottom:32px;position:relative}
+.tl-dot{width:10px;height:10px;background:var(--red);border-radius:50%;position:absolute;left:-29px;top:6px}
+.tl-date{font-size:11px;letter-spacing:3px;color:var(--red);margin-bottom:6px}
+.tl-text{font-size:16px;color:var(--text);line-height:1.7}
+.tl-text strong{color:#fff}
+
+/* DEALS */
+#deals{background:#111827}
+.deal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
+.deal-card{background:#1a2035;padding:32px 24px;text-align:center}
+.deal-num{font-family:'Noto Serif SC',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--gold);line-height:1}
+.deal-unit{font-size:14px;color:var(--gold);opacity:.6;margin-top:4px}
+.deal-label{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5}
+
+/* UNRESOLVED */
+#unresolved{background:#1c0f0a}
+.risk-item{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(192,57,43,.15)}
+.risk-item:last-child{border-bottom:none}
+.risk-icon{font-size:28px;flex-shrink:0;width:40px;text-align:center}
+.risk-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:6px}
+.risk-desc{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* SCENARIOS */
+#scenarios{background:#0a1a0a}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
+.scenario{padding:32px 24px}
+.scenario.bull{background:#0d2b0d}
+.scenario.base{background:#1a2035}
+.scenario.bear{background:#2b0d0d}
+.scenario-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.scenario.bull .scenario-label{color:#27ae60}
+.scenario.base .scenario-label{color:var(--gold)}
+.scenario.bear .scenario-label{color:var(--red)}
+.scenario-gdp{font-family:'Noto Serif SC',serif;font-size:clamp(32px,4vw,48px);font-weight:900;line-height:1;margin-bottom:12px}
+.scenario.bull .scenario-gdp{color:#27ae60}
+.scenario.base .scenario-gdp{color:var(--gold)}
+.scenario.bear .scenario-gdp{color:var(--red)}
+.scenario-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* CONCLUSION */
+#conclusion{background:#0d0d0d;min-height:60vh;justify-content:center}
+.verdict{font-family:'Noto Serif SC',serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;line-height:1.6;margin-bottom:40px;border-left:4px solid var(--red);padding-left:24px}
+.verdict em{color:var(--gold);font-style:normal}
+.sources{margin-top:60px;padding-top:32px;border-top:1px solid #1e293b;font-size:12px;color:#444;line-height:2}
+.sources a{color:#555;text-decoration:none}
+.sources a:hover{color:var(--gold)}
+
+@media(max-width:600px){
+  .cards,.deal-grid,.scenario-grid{grid-template-columns:1fr}
+  .section{padding:60px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="section" id="cover">
+  <div class="inner fade">
+    <div class="cover-label">深度分析 · 2026年5月</div>
+    <div class="cover-line"></div>
+    <h1 class="cover-title">中国经济<br><span>2026</span></h1>
+    <p class="cover-sub">特朗普访华后的路径推演</p>
+    <div class="cover-date">2026.05.22 · 数据截至访华后一周</div>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section class="section" id="snapshot">
+  <div class="inner fade">
+    <div class="sec-tag">宏观快照</div>
+    <h2 class="sec-title">四组数字，读懂当前位置</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-num">5.0<span class="card-unit">%</span></div>
+        <div class="card-label">2026年一季度GDP增速</div>
+        <div class="card-note">较上季度回升0.5个百分点 · 国家统计局</div>
+      </div>
+      <div class="card red">
+        <div class="card-num">4.5<span class="card-unit">%</span></div>
+        <div class="card-label">全年增长目标下限（史上最低）</div>
+        <div class="card-note">两会设定 · IMF预测同为4.5%</div>
+      </div>
+      <div class="card green">
+        <div class="card-num">$84.8<span class="card-unit">B</span></div>
+        <div class="card-label">2026年4月单月贸易顺差</div>
+        <div class="card-note">较3月$51.1B大幅扩大 · 路透社</div>
+      </div>
+      <div class="card">
+        <div class="card-num">1.2<span class="card-unit">%</span></div>
+        <div class="card-label">4月CPI同比（超预期0.8%）</div>
+        <div class="card-note">核心CPI同步升至1.2% · 通缩压力边际缓解</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESSURE -->
+<section class="section" id="pressure">
+  <div class="inner fade">
+    <div class="sec-tag">增长压力</div>
+    <h2 class="sec-title">开局良好，但内需裂缝已现</h2>
+    <div class="divider"></div>
+    <div class="data-row">
+      <div class="data-big miss">-1.6%</div>
+      <div class="data-desc">
+        <strong>固定资产投资（1-4月累计）</strong>
+        同比收缩，民间投资信心不足，基建与制造业国企拉动效应递减
+      </div>
+    </div>
+    <div class="data-row">
+      <div class="data-big miss">4.1%</div>
+      <div class="data-desc">
+        <strong>4月工业增加值同比 <span class="miss-tag">MISS</span></strong>
+        大幅低于市场预期5.9%；1-4月累计+5.6%，但单月动能明显减弱
+      </div>
+    </div>
+    <div class="data-row">
+      <div class="data-big miss">40月低</div>
+      <div class="data-desc">
+        <strong>4月社会消费品零售总额</strong>
+        创近40个月新低，内需疲软是2026年最核心的结构性约束
+      </div>
+    </div>
+    <div class="data-row">
+      <div class="data-big ok">$1.2T</div>
+      <div class="data-desc">
+        <strong>2025年全年贸易顺差（历史纪录）</strong>
+        出口强劲掩盖内需不足；外部需求一旦收缩，缓冲垫将快速消失
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUMP VISIT -->
+<section class="section" id="visit">
+  <div class="inner fade">
+    <div class="sec-tag">特朗普访华</div>
+    <h2 class="sec-title">5月14-15日，北京峰会</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">5月14日 · 抵京</div>
+        <div class="tl-text">特朗普抵达北京，与习近平举行会谈。双方均将此次访问定性为"历史性"，但<strong>两国政府事后发布的声明存在明显分歧</strong>。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">5月15日 · 协议公布</div>
+        <div class="tl-text">白宫发布情况说明，宣布"历史性协议"。中方声明措辞更为保守，强调"系统性调整"而非具体数字承诺。<strong>双方对协议内容的解读存在分歧。</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">5月15日 · 特朗普离京</div>
+        <div class="tl-text">特朗普称达成"极好的贸易协议"。NBC、CBS等主流媒体评价：<strong>"没有重大突破"</strong>，专家认为短期缓和但未解决结构性问题。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">5月20日 · 后续</div>
+        <div class="tl-text">中国宣布将购买200架波音飞机，并寻求延长贸易停战协议。<strong>稀土出口管制问题仍悬而未决。</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEALS -->
+<section class="section" id="deals">
+  <div class="inner fade">
+    <div class="sec-tag">协议量化</div>
+    <h2 class="sec-title">白纸黑字，数字说话</h2>
+    <div class="deal-grid">
+      <div class="deal-card">
+        <div class="deal-num">200</div>
+        <div class="deal-unit">架波音飞机</div>
+        <div class="deal-label">中国航空公司采购<br>低于市场预期500架</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-num">$17B</div>
+        <div class="deal-unit">/ 年</div>
+        <div class="deal-label">美国农产品最低采购额<br>2026-2028年，连续三年</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-num">25M</div>
+        <div class="deal-unit">吨大豆/年</div>
+        <div class="deal-label">延续2025年10月釜山协议<br>同期执行三年</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-num">10%</div>
+        <div class="deal-unit">关税上限</div>
+        <div class="deal-label">301条款关税重置上限<br>替代IEEPA关税</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-num">$30B</div>
+        <div class="deal-unit">双边</div>
+        <div class="deal-label">双方各自对价值300亿美元<br>商品实施关税减让</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-num">425</div>
+        <div class="deal-unit">家美国牛肉企业</div>
+        <div class="deal-label">获得中国市场五年许可证延期<br>新增77家准入资质</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNRESOLVED -->
+<section class="section" id="unresolved">
+  <div class="inner fade">
+    <div class="sec-tag">未解难题</div>
+    <h2 class="sec-title">三颗定时炸弹</h2>
+    <div class="divider"></div>
+    <div class="risk-item">
+      <div class="risk-icon">⚗️</div>
+      <div>
+        <div class="risk-title">稀土出口管制——悬而未决</div>
+        <div class="risk-desc">中国对稀土矿物及磁铁的出口限制是峰会最大遗留问题。稀土是消费电子、电动车、军工的核心原材料，管制一旦收紧，对美国科技供应链冲击远超关税。峰会未达成任何约束性承诺。</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon">📅</div>
+      <div>
+        <div class="risk-title">关税停战到期——2026年11月</div>
+        <div class="risk-desc">现行贸易停战协议将于2026年11月到期。双方虽设立"贸易委员会"讨论延期，但中期选举前的政治压力可能使谈判复杂化。若停战不续，关税将自动反弹。</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon">🔌</div>
+      <div>
+        <div class="risk-title">结构性脱钩——表面缓和掩盖长期趋势</div>
+        <div class="risk-desc">AI芯片出口管制、台湾问题、技术标准分歧均未触及。中美双方对峰会成果的解读本身就存在分歧，显示战略互信基础薄弱。短期贸易缓和不等于长期脱钩逆转。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENARIOS -->
+<section class="section" id="scenarios">
+  <div class="inner fade">
+    <div class="sec-tag">2026-2027展望</div>
+    <h2 class="sec-title">三种路径，概率各异</h2>
+    <div class="scenario-grid">
+      <div class="scenario bull">
+        <div class="scenario-label">乐观 · 概率20%</div>
+        <div class="scenario-gdp">5.0%+</div>
+        <div class="scenario-desc">停战延期+稀土解禁+内需刺激政策超预期。出口维稳，消费回暖，全年达标上限。需要：11月停战续签+财政加码。</div>
+      </div>
+      <div class="scenario base">
+        <div class="scenario-label">基准 · 概率55%</div>
+        <div class="scenario-gdp">4.5%</div>
+        <div class="scenario-desc">停战延期但稀土管制持续，内需温和复苏，出口贡献收窄。全年勉强达标下限。人民币升至6.65附近。</div>
+      </div>
+      <div class="scenario bear">
+        <div class="scenario-label">悲观 · 概率25%</div>
+        <div class="scenario-gdp">4.0%</div>
+        <div class="scenario-desc">停战11月到期未续，稀土管制升级，外需骤降叠加内需疲软。增速跌破目标区间，政策空间受限于通缩压力。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="section" id="conclusion">
+  <div class="inner fade">
+    <div class="sec-tag">客观结论</div>
+    <h2 class="sec-title">停火不等于和解</h2>
+    <div class="divider"></div>
+    <div class="verdict">
+      特朗普访华带来的是<em>短期情绪缓和</em>，而非结构性转机。<br>
+      200架波音、$17B农产品，是可量化的让步；<br>
+      稀土管制、11月关税悬崖、AI芯片禁令，是<em>未被触碰的核心矛盾</em>。<br><br>
+      中国经济2026年的真正考验，不在于峰会签了什么，<br>
+      而在于<em>内需能否在外部缓和窗口期完成修复</em>。<br>
+      4月零售数据创40个月新低，这个问题尚无答案。
+    </div>
+    <div class="sources">
+      数据来源：
+      <a href="https://www.stats.gov.cn">国家统计局</a> ·
+      <a href="https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation">IMF 2026 Article IV</a> ·
+      <a href="https://www.worldbank.org/ext/en/country/china">世界银行</a> ·
+      <a href="https://www.china-briefing.com/news/xi-trump-beijing-summit-what-was-agreed/">China Briefing峰会协议</a> ·
+      <a href="https://www.reuters.com/world/china/china-april-exports-rebound-strongly-trade-surplus-widens-ahead-trump-visit-2026-05-09/">Reuters贸易数据</a> ·
+      <a href="https://www.cnbc.com/2026/05/18/china-april-retail-sales-industrial-output-investment-unemployment-iran-war.html">CNBC 4月经济数据</a> ·
+      <a href="https://finance.yahoo.com/markets/currencies/articles/global-banks-raise-yuan-forecasts-075406057.html">Yahoo Finance人民币预测</a>
+    </div>
+  </div>
+</section>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, {threshold: 0.1});
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
