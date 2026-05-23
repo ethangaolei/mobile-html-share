@@ -1,0 +1,3 @@
+source=/Users/ethangao/.hermes/projects/kunpeng-cso-ai/诺华内部AI组织设计-v13交互批注版.html
+published_at=2026-05-23 11:41:57 CST
+slug=2026-05-23-novartis-ai-org-v13-interactive-review
