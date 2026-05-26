@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>鲲鹏业务：与法务沟通的精简叙事</title>
+<style>
+:root{--bg:#111820;--paper:#f8f1e6;--ink:#17212b;--muted:#66727c;--gold:#8a5a24;--line:#d8c8b0;--red:#9b2f2f;--green:#1f6b4f;--blue:#245b8a}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#101923,#202b36);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;color:var(--ink)}
+.toolbar{position:fixed;right:18px;top:14px;z-index:10;display:flex;gap:8px}.toolbar button{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:8px 13px;cursor:pointer}.toolbar button:hover{background:rgba(255,255,255,.2)}
+.page{width:min(820px,calc(100vw - 28px));margin:38px auto;background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.42)}
+header{padding:50px 56px 34px;background:linear-gradient(135deg,#fff7e8,#eadcc5);border-bottom:1px solid var(--line)}.eyebrow{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:800;margin-bottom:14px}h1{font-size:36px;line-height:1.18;margin:0 0 16px;letter-spacing:-.03em}.subtitle{font-size:20px;line-height:1.55;color:#37424d;font-weight:620;max-width:680px}.thesis{margin-top:24px;border:1px solid var(--line);background:rgba(255,255,255,.52);border-radius:14px;padding:16px 18px;font-size:18px;line-height:1.65;font-weight:760;color:#1d2731}
+main{padding:40px 56px 54px}.section{margin-bottom:42px}.section:last-child{margin-bottom:0}h2{font-size:24px;margin:0 0 16px;border-left:5px solid var(--gold);padding-left:13px;letter-spacing:-.02em}h3{font-size:18px;margin:18px 0 10px}p{font-size:16px;line-height:1.75;margin:9px 0;color:#28343f}ul{margin:8px 0 0 0;padding-left:22px}li{font-size:16px;line-height:1.68;margin:3px 0}.box{border:1px solid var(--line);background:#fffaf1;border-radius:15px;padding:17px 19px;margin:14px 0}.quote{border-left:4px solid var(--blue);background:#eef5fb;border-radius:12px;padding:15px 17px;font-size:17px;line-height:1.65;font-weight:720;color:#18324a}.script{background:#18222d;color:#f8ead4;border-radius:15px;padding:17px 19px;margin:14px 0}.script p{color:#f8ead4}.script b{color:#ffd58c}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{border:1px solid var(--line);border-radius:15px;background:#fffaf1;padding:16px}.tag{display:inline-block;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:850;margin-bottom:8px}.red{background:#ffe0db;color:#8b2929}.green{background:#dff4e8;color:#166044}.gold{background:#f0ddbd;color:#754613}.blue{background:#e1eff9;color:#245b8a}
+table{width:100%;border-collapse:collapse;background:#fffaf1;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0}th,td{border-bottom:1px solid var(--line);padding:12px 11px;text-align:left;vertical-align:top;font-size:14.5px;line-height:1.55}th{background:#eadcc5;font-weight:850}tr:last-child td{border-bottom:0}.chain{counter-reset:c}.chain .item{position:relative;border:1px solid var(--line);background:#fffaf1;border-radius:14px;padding:15px 17px 15px 56px;margin:11px 0}.chain .item:before{counter-increment:c;content:counter(c);position:absolute;left:17px;top:17px;width:26px;height:26px;border-radius:50%;background:#1d2731;color:#fff;display:grid;place-items:center;font-weight:850}.footer{padding:24px 56px 38px;border-top:1px solid var(--line);background:#efe2cd;color:#5d5143;font-size:13px;line-height:1.6}
+@media(max-width:720px){.toolbar{position:static;justify-content:center;padding:12px}.page{width:100%;margin:0;border-radius:0}header,main,.footer{padding-left:24px;padding-right:24px}h1{font-size:30px}.grid{grid-template-columns:1fr}}
+@media print{body{background:#fff}.toolbar{display:none}.page{box-shadow:none;margin:0;width:100%;border-radius:0}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">打印 / 导出 PDF</button></div>
+<div class="page">
+<header>
+<div class="eyebrow">KUNPENG × LEGAL ALIGNMENT</div>
+<h1>鲲鹏业务：和法务沟通的核心叙事</h1>
+<div class="subtitle">不要把讨论带成“业务要法务放行 CSO”。真正要对齐的是：如何把第三方合作从风险黑箱，改造成透明、分责、可审计的基层业务操作系统。</div>
+<div class="thesis">一句话：鲲鹏不是传统 CSO 外包，而是基层第三方合作治理模式；治理的核心不是只定规则、划边界，而是让该透明的东西透明，让该留痕的东西留痕，让风险可以被看见并关闭。</div>
+</header>
+<main>
+<section class="section">
+<h2>一、先承认法务担心的是对的</h2>
+<p>法务反感第三方 CSO，不是因为不支持业务，而是因为传统 CSO 容易出现三个问题：厂家实际指挥第三方、过程黑箱、风险最后回到厂家。</p>
+<div class="script"><p><b>开场建议：</b></p><p>“如果鲲鹏只是把销售动作外包给第三方，再由诺华在背后实际指挥，那这个模式我也不认为应该做。我们要讨论的不是如何放松法务边界，而是能否把第三方合作设计成一个边界清楚、信息透明、过程留痕、风险可审计的治理模式。”</p></div>
+</section>
+<section class="section">
+<h2>二、把鲲鹏重新定义：不是外包销售，而是治理系统</h2>
+<div class="grid">
+<div class="card"><span class="tag red">不能这样定义</span><h3>第三方帮我们卖货</h3><p>这个定义会天然触发法务担忧：诺华是否在变相管理第三方销售队伍？是否把不该做的销售动作转移给合作方？</p></div>
+<div class="card"><span class="tag green">应该这样定义</span><h3>基层业务操作系统</h3><p>通过合同、RACI、JCC、数据、医学内容、透明机制和审计，把合作方行为纳入可治理框架。</p></div>
+</div>
+<div class="quote">鲲鹏的竞争力不是“更多人去覆盖基层”，而是“有能力治理第三方合作生态”。</div>
+</section>
+<section class="section">
+<h2>三、治理逻辑必须连成一条链</h2>
+<div class="chain">
+<div class="item"><h3>先分责</h3><p>诺华管合作关系、合同、产品/医学内容、数据和审计；合作方管人员、日常管理、拜访执行和活动落地。</p></div>
+<div class="item"><h3>再划线</h3><p>招聘、任命、考核、奖金、拜访安排、销售技巧、个体客户突破，是诺华不能碰的红线。</p></div>
+<div class="item"><h3>再透明</h3><p>边界不是挡箭牌。合作目标、数据口径、资源投入、活动执行、风险事件和整改进度，必须透明。</p></div>
+<div class="item"><h3>再留痕</h3><p>透明不能停留在口头，要落在合同附件、JCC 纪要、数据包、培训记录、风险登记和整改 action log。</p></div>
+<div class="item"><h3>最后审计闭环</h3><p>发现异常后要能升级、整改、复盘、关闭。否则治理只是“看起来合规”。</p></div>
+</div>
+</section>
+<section class="section">
+<h2>四、需要和法务达成的三个核心共识</h2>
+<div class="box"><h3>共识 1：法务不是来“放行风险”，而是参与设计风险控制系统</h3><p>鲲鹏应由法务前置参与，定义可做、不可做、必须透明、必须留痕和必须审计的事项。</p></div>
+<div class="box"><h3>共识 2：透明不是越权管理，而是防止黑箱</h3><p>该由合作方决策的仍由合作方决策；但关键事实必须透明。透明的目的是证明诺华没有越界，也没有放任风险。</p></div>
+<div class="box"><h3>共识 3：产品/医学支持可以做，销售管理不能做</h3><p>诺华可以确保产品信息准确、医学内容一致、Q&A 合规；但不能培训客情技巧、成交技巧、个体客户突破策略，也不能评价第三方人员销售表现。</p></div>
+</section>
+<section class="section">
+<h2>五、和法务具体对齐什么</h2>
+<table><thead><tr><th>对齐事项</th><th>要解决的问题</th><th>建议输出物</th></tr></thead><tbody>
+<tr><td><b>1. 业务定义</b></td><td>鲲鹏到底是不是传统 CSO？诺华角色是什么？</td><td>一页纸：业务定义与合规原则</td></tr>
+<tr><td><b>2. RACI + 红线</b></td><td>哪些诺华主导、参与、了解、禁止参与？</td><td>42 项事项 RACI 与红线清单</td></tr>
+<tr><td><b>3. 透明事项清单</b></td><td>哪些信息不能黑箱？透明到什么程度？</td><td>透明事项清单与数据/文件载体</td></tr>
+<tr><td><b>4. JCC 机制</b></td><td>会议是治理会，还是变相销售指挥会？</td><td>JCC SOP、固定议程、纪要模板</td></tr>
+<tr><td><b>5. 山东试点</b></td><td>先小范围跑通，避免一次性全国放开。</td><td>山东合规治理试点方案</td></tr>
+</tbody></table>
+</section>
+<section class="section">
+<h2>六、哪些东西必须透明</h2>
+<table><thead><tr><th>必须透明</th><th>为什么透明</th><th>边界提醒</th></tr></thead><tbody>
+<tr><td>合作目标与数据口径</td><td>防止总达成掩盖县域真实达成、压货、流向错配。</td><td>看数据，不直接指挥代表。</td></tr>
+<tr><td>合作方资源投入</td><td>确认合作方是否按合同投入人员和管理资源。</td><td>看投入状态，不参与招聘任命。</td></tr>
+<tr><td>产品/医学内容使用</td><td>防止错误、夸大或不一致的信息传递给医生。</td><td>管内容准确，不管销售技巧。</td></tr>
+<tr><td>市场活动类型与结果</td><td>避免活动费用和客户互动黑箱化。</td><td>看合规文件，不指挥活动执行细节。</td></tr>
+<tr><td>风险事件与整改</td><td>确保风险能升级、整改、关闭。</td><td>管风险闭环，不替合作方做内部处分。</td></tr>
+</tbody></table>
+<div class="script"><p><b>可直接说：</b></p><p>“透明不是为了让诺华去管合作方员工，而是为了让关键事实不黑箱。该合作方负责的仍由合作方负责，但目标、数据、资源、活动、风险和整改必须透明到足以判断这个合作是否健康、合规、可持续。”</p></div>
+</section>
+<section class="section">
+<h2>七、最关键的边界话术</h2>
+<table><thead><tr><th>敏感问题</th><th>建议回答</th></tr></thead><tbody>
+<tr><td>是不是变相管理第三方销售？</td><td>不是。诺华管理的是合作机制和风险闭环，不管理第三方员工的招聘、考核、奖金和日常拜访。</td></tr>
+<tr><td>为什么还要看合作方资源投入？</td><td>因为这是合同履约和风险治理需要。透明不等于干预，了解不等于指挥。</td></tr>
+<tr><td>能不能培训第三方？</td><td>可以做产品/医学内容和合规边界培训；不做销售技巧、客情突破和个体客户影响策略。</td></tr>
+<tr><td>JCC 会不会变成销售会？</td><td>不会。JCC 只讨论合同、合规、数据、资源、风险和整改，不讨论代表拜访路线、客户突破和人员奖金。</td></tr>
+</tbody></table>
+</section>
+<section class="section">
+<h2>八、最后请求法务什么</h2>
+<div class="script"><p><b>收尾建议：</b></p><p>“我不是请法务批准一个高风险 CSO 模式，而是请法务和业务一起设计一个低风险治理模式。我们先把业务定义、RACI 红线、透明事项、JCC 机制和审计闭环写清楚，再用山东做试点。跑不通就不复制；跑通后，鲲鹏就不是风险放大器，而是一套基层第三方合作风险治理系统。”</p></div>
+</section>
+</main>
+<div class="footer">依据材料：鲲鹏业务驱动力路径图、鲲鹏卓越运营价值笔记、山东鲲鹏业务会议纪要。本文为内部沟通草案，不构成正式法律意见或合规批准文件。</div>
+</div>
+</body>
+</html>
