@@ -1,0 +1,3 @@
+source=/Users/ethangao/.hermes/projects/kunpeng-cso-ai/诺华内部AI组织设计-v18小修改版.html
+published_at=2026-05-29 10:03:47 CST
+slug=novartis-ai-org-design-v18
