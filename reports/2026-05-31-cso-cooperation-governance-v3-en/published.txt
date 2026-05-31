@@ -1,0 +1,3 @@
+source=/Users/ethangao/.hermes/projects/report-artifacts/cso-governance-upgrade/cso-cooperation-governance-v3-en.html
+published_at=2026-05-31 21:05:54 CST
+slug=cso-cooperation-governance-v3-en
