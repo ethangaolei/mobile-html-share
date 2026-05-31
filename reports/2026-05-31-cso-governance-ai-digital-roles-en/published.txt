@@ -1,0 +1,3 @@
+source=/Users/ethangao/.hermes/projects/report-artifacts/cso-governance-upgrade/cso-governance-upgrade-v8-ai-digital-roles-en.html
+published_at=2026-05-31 21:55:17 CST
+slug=cso-governance-ai-digital-roles-en
