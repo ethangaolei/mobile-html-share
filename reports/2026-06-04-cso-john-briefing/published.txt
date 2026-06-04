@@ -1,3 +1,3 @@
 source=/Users/ethangao/.hermes/projects/cso-john-briefing/100days_actions_john_briefing.html
-published_at=2026-06-04 09:15:37 CST
+published_at=2026-06-04 10:38:58 CST
 slug=cso-john-briefing
