@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100days actions — CSO Governance Briefing for John</title>
+<style>
+:root{
+  --navy:#102A43; --blue:#1F4E78; --cyan:#2F80ED; --teal:#18A999;
+  --gold:#C99700; --orange:#E56B2F; --red:#C0392B; --green:#2E7D32;
+  --ink:#17212B; --muted:#5E6B78; --line:#D8E0EA; --bg:#F4F7FB; --card:#FFFFFF;
+  --soft-blue:#EAF3FF; --soft-gold:#FFF6D8; --soft-green:#EAF7EF; --soft-orange:#FFF0E7;
+}
+*{box-sizing:border-box} body{margin:0;background:#0b1520;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans",sans-serif;}
+.deck{width:100vw;height:100vh;overflow-y:auto;scroll-snap-type:y mandatory;background:#0b1520;}
+.slide{position:relative;width:100vw;min-height:100vh;padding:42px 56px;scroll-snap-align:start;background:linear-gradient(135deg,#F7FAFE 0%,#EEF4FB 62%,#E7EEF7 100%);overflow:hidden;}
+.slide:before{content:"";position:absolute;right:-200px;top:-260px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(47,128,237,.18),rgba(47,128,237,0) 70%);} 
+.slide:after{content:"";position:absolute;left:-180px;bottom:-260px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(24,169,153,.12),rgba(24,169,153,0) 70%);} 
+.header{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:8px;}
+h1{font-size:42px;line-height:1.05;margin:0;color:var(--navy);font-weight:820;letter-spacing:-.03em;}
+.subtitle{font-size:16px;color:var(--muted);margin-top:10px;max-width:900px;line-height:1.5;}
+.badge{background:rgba(16,42,67,.92);color:white;border-radius:999px;padding:10px 16px;font-weight:700;font-size:13px;box-shadow:0 10px 25px rgba(16,42,67,.15)}
+.grid{position:relative;z-index:2;display:grid;gap:18px}.two{grid-template-columns:1fr 1fr}.three{grid-template-columns:1fr 1fr 1fr}.four{grid-template-columns:repeat(4,1fr)}
+.card{background:rgba(255,255,255,.92);border:1px solid rgba(216,224,234,.95);border-radius:20px;padding:20px;box-shadow:0 16px 38px rgba(16,42,67,.08);backdrop-filter:blur(6px)}
+.card h3{margin:0 0 12px;color:var(--navy);font-size:19px}.card p{margin:0;color:var(--muted);line-height:1.45;font-size:14px}.small{font-size:12px;color:var(--muted)}
+table{width:100%;border-collapse:separate;border-spacing:0;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(16,42,67,.08)}
+th{background:var(--navy);color:white;text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:12px 14px;border-right:1px solid rgba(255,255,255,.15)}
+td{padding:11px 14px;border-top:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;font-size:13px;line-height:1.35}td:last-child,th:last-child{border-right:0}.area{font-weight:800;color:var(--navy);width:190px}.timeline{font-weight:800;color:var(--blue);white-space:nowrap}.progress{color:#394B59}.muted{color:var(--muted)}
+.highlight-legal{display:inline;padding:0 2px;border-radius:0;background:transparent;color:var(--navy);font-weight:900;box-shadow:none;text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--gold);text-underline-offset:3px}
+.pill{display:inline-block;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;margin:0 6px 6px 0}.p-blue{background:var(--soft-blue);color:var(--blue)}.p-green{background:var(--soft-green);color:var(--green)}.p-gold{background:var(--soft-gold);color:#8A6500}.p-orange{background:var(--soft-orange);color:#A84916}
+.impact{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:start}.num{width:54px;height:54px;border-radius:16px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:850;box-shadow:0 12px 24px rgba(16,42,67,.16)}
+.step{position:relative;padding-left:26px}.step:before{content:"";position:absolute;left:9px;top:10px;bottom:-22px;width:2px;background:var(--line)}.step:last-child:before{display:none}.dot{position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--cyan);border:4px solid white;box-shadow:0 0 0 1px var(--line)}
+.model{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:8px}.dim{position:relative;min-height:142px;border-radius:18px;background:white;border:1px solid var(--line);padding:15px 15px 14px;box-shadow:0 10px 24px rgba(16,42,67,.07)}.dim b{display:block;color:var(--navy);font-size:17px;margin-bottom:7px}.dim p{font-size:12.5px;color:var(--muted);line-height:1.42;margin:0}.dim .tag{position:absolute;right:12px;top:12px;font-size:11px;font-weight:900;color:white;background:var(--blue);border-radius:999px;padding:4px 8px}
+.loop{display:flex;align-items:center;justify-content:center;margin:13px 0 8px}.loop span{display:inline-flex;align-items:center;justify-content:center;width:112px;height:38px;border-radius:999px;background:var(--navy);color:white;font-weight:850;font-size:12px;margin:0 3px}.arrow{color:var(--cyan);font-weight:900;font-size:22px;margin:0 2px}.support-list{columns:2;column-gap:24px;margin:8px 0 0;padding-left:18px}.support-list li{break-inside:avoid;margin-bottom:8px;font-size:13px;line-height:1.4}.discussion-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}.discussion-item{background:rgba(255,255,255,.94);border:1px solid rgba(47,128,237,.22);border-left:5px solid var(--cyan);border-radius:17px;padding:15px 16px;box-shadow:0 12px 28px rgba(16,42,67,.07)}.discussion-item b{display:block;color:var(--navy);font-size:16px;margin-bottom:5px}.discussion-item span{font-size:12.5px;color:var(--muted);line-height:1.35}.legal-sequence{grid-template-columns:.85fr 1.15fr}.compact-card{padding:16px}.compact-card h3{font-size:17px;margin-bottom:10px}.compact-card .impact{grid-template-columns:42px 1fr;gap:10px}.compact-card .num{width:34px;height:34px;border-radius:11px;font-size:16px}.compact-card .impact b{font-size:12.8px;line-height:1.28}.steps-card .step{padding-left:24px;margin-bottom:5px}.steps-card .step p{font-size:12.2px;line-height:1.32}.steps-card .pill{font-size:10.5px;padding:4px 7px}.support-compact .support-list{columns:1}.support-compact .support-list li{font-size:12.6px;margin-bottom:7px}.support-compact .note{font-size:12px;line-height:1.34;margin-top:8px}.footer{position:absolute;left:56px;right:56px;bottom:18px;display:flex;justify-content:space-between;color:#7B8794;font-size:11px;z-index:2}.note{border-left:4px solid var(--cyan);padding-left:12px;color:var(--muted);font-size:13px;line-height:1.45}
+.gov-layout{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:18px;align-items:stretch}.closed-loop{position:relative;height:690px;border-radius:28px;background:rgba(255,255,255,.88);border:1px solid rgba(216,224,234,.95);box-shadow:0 20px 48px rgba(16,42,67,.10);overflow:hidden}.closed-loop svg{position:absolute;inset:0;width:100%;height:100%;}.principle-badge{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:5;background:linear-gradient(90deg,var(--gold),#E9B949);color:#102A43;border-radius:999px;padding:8px 16px;font-weight:900;font-size:13px;letter-spacing:.02em;box-shadow:0 12px 28px rgba(201,151,0,.20)}.principle-quote{position:absolute;left:26px;top:54px;z-index:5;width:300px;text-align:left;color:#4E5D6C;font-size:10.8px;line-height:1.32;background:rgba(255,255,255,.78);border:1px solid rgba(201,151,0,.38);border-left:4px solid var(--gold);border-radius:13px;padding:9px 11px;box-shadow:0 8px 22px rgba(16,42,67,.07)}.principle-quote:before{content:"Policy basis";display:block;margin-bottom:4px;color:#8A6500;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.loop-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:270px;height:270px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#1F4E78);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px;box-shadow:0 24px 54px rgba(16,42,67,.28);z-index:3}.loop-center b{font-size:25px;line-height:1.05;letter-spacing:-.02em}.loop-center span{font-size:12px;line-height:1.35;color:#D9EAF7;margin-top:10px}.loop-node{position:absolute;width:260px;min-height:150px;border-radius:19px;background:white;border:1px solid var(--line);box-shadow:0 14px 32px rgba(16,42,67,.12);padding:13px 14px;z-index:4}.loop-node .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:9px;background:var(--blue);color:white;font-weight:900;font-size:12px;margin-bottom:7px}.loop-node h3{margin:0 0 5px;color:var(--navy);font-size:16px;line-height:1.12}.loop-node p{margin:0;color:var(--muted);font-size:11.5px;line-height:1.28}.loop-node .meta{margin-top:8px;border-top:1px solid #E6EDF5;padding-top:6px;display:grid;grid-template-columns:70px 1fr;gap:4px 6px;font-size:10.5px;line-height:1.22}.loop-node .meta b{color:var(--blue);font-size:10.5px}.loop-node .meta span{color:#4E5D6C}.node-1{left:50%;top:48px;transform:translateX(-50%)}.node-2{right:46px;top:170px}.node-3{right:46px;bottom:118px}.node-4{left:50%;bottom:28px;transform:translateX(-50%)}.node-5{left:46px;bottom:118px}.node-6{left:46px;top:170px}.support-panel{display:none}.support-card{display:none}.mini-table{display:none}.mini-table b{color:var(--navy)}.support-card ul{margin:8px 0 0;padding-left:18px}.support-card li{font-size:12.5px;line-height:1.38;margin-bottom:6px;color:var(--muted)}
+#slide-2{padding:20px 46px}#slide-2 .header{margin-bottom:10px}#slide-2 h1{font-size:32px}#slide-2 .kicker{font-size:11px;margin-bottom:5px}#slide-2 .subtitle{font-size:12.5px;margin-top:6px}#slide-2 .badge{padding:8px 12px;font-size:11px}.discussion-strip{gap:10px;margin-bottom:10px}.discussion-item{padding:10px 12px;border-radius:14px}.discussion-item b{font-size:14px;margin-bottom:3px}.discussion-item span{font-size:11.3px;line-height:1.25}.legal-sequence{gap:12px}.compact-card,.steps-card{padding:12px}.compact-card h3,.steps-card h3,.support-compact h3{font-size:15px;margin-bottom:7px}.compact-card .impact{grid-template-columns:32px 1fr;gap:8px}.compact-card .num{width:28px;height:28px;border-radius:9px;font-size:13px}.compact-card .impact b{font-size:11.4px;line-height:1.22}.steps-card .step{padding-left:20px;margin-bottom:1px}.steps-card .step:before{left:8px}.steps-card .dot{width:17px;height:17px;border-width:3px}.steps-card .step b{font-size:12.4px}.steps-card .step p{font-size:10.9px;line-height:1.22;margin:1px 0}.steps-card .pill{font-size:9.5px;padding:3px 6px;margin-bottom:2px}.support-compact{padding:12px!important;margin-top:10px!important}.support-compact .support-list{margin-top:4px}.support-compact .support-list li{font-size:11.4px;margin-bottom:4px}.support-compact .note{font-size:10.8px;line-height:1.24;margin-top:5px;padding-left:9px}
+#slide-3{padding:20px 46px}#slide-3 .header{margin-bottom:10px}#slide-3 h1{font-size:32px}#slide-3 .kicker{font-size:11px;margin-bottom:5px}#slide-3 .subtitle{font-size:13px;margin-top:6px;max-width:760px}#slide-3 .badge{padding:8px 12px;font-size:11px}#slide-3 .closed-loop{height:500px;border-radius:24px}#slide-3 .principle-badge{top:10px;font-size:11px;padding:7px 13px}#slide-3 .principle-quote{left:50%;top:47px;transform:translateX(-50%);width:auto;max-width:650px;text-align:center;font-size:9.8px;line-height:1.22;padding:7px 10px;border-left:1px solid rgba(201,151,0,.38);border-top:3px solid var(--gold)}#slide-3 .principle-quote:before{display:inline;content:"Policy basis: ";margin:0;color:#8A6500;font-size:9.8px;font-weight:900;letter-spacing:0;text-transform:none}#slide-3 .loop-center{width:210px;height:210px;padding:20px}#slide-3 .loop-center b{font-size:20px}#slide-3 .loop-center span{font-size:10.8px}#slide-3 .loop-node{width:220px;min-height:116px;padding:9px 11px;border-radius:16px}#slide-3 .loop-node .n{width:23px;height:23px;border-radius:7px;font-size:10px;margin-bottom:5px}#slide-3 .loop-node h3{font-size:13.6px;margin-bottom:3px}#slide-3 .loop-node p{font-size:10.5px;line-height:1.22}#slide-3 .meta{font-size:10px;gap:2px 6px;margin-top:6px}#slide-3 .meta b{font-size:9.5px}#slide-3 .node-1{top:112px}#slide-3 .node-2{right:34px;top:124px}#slide-3 .node-3{right:34px;bottom:58px}#slide-3 .node-4{bottom:12px}#slide-3 .node-5{left:34px;bottom:58px}#slide-3 .node-6{left:34px;top:124px}
+
+/* v-next correction: keep page 2 spacious; only make policy note compact */
+#slide-3{padding:32px 52px;min-height:100vh}
+#slide-3 .header{margin-bottom:14px}
+#slide-3 h1{font-size:38px}
+#slide-3 .subtitle{font-size:15px;line-height:1.38;max-width:880px}
+#slide-3 .closed-loop{height:610px;border-radius:28px}
+#slide-3 .principle-badge{top:14px;font-size:12.5px;padding:8px 15px}
+#slide-3 .principle-quote{display:none}
+#slide-3 .principle-quote:before{display:none}
+#slide-3 .loop-center{width:245px;height:245px;padding:24px}
+#slide-3 .loop-center b{font-size:23px}
+#slide-3 .loop-center span{font-size:11.8px}
+#slide-3 .loop-node{width:250px;min-height:140px;padding:12px 13px;border-radius:18px}
+#slide-3 .loop-node .n{width:26px;height:26px;border-radius:8px;font-size:11px;margin-bottom:6px}
+#slide-3 .loop-node h3{font-size:15.2px;margin-bottom:4px}
+#slide-3 .loop-node p{font-size:11.8px;line-height:1.32}
+#slide-3 .meta{font-size:11px;gap:3px 7px;margin-top:8px}
+#slide-3 .meta b{font-size:10px}
+#slide-3 .node-1{left:50%;top:112px;transform:translateX(-50%)}
+#slide-3 .node-2{right:42px;top:180px}
+#slide-3 .node-3{right:42px;bottom:88px}
+#slide-3 .node-4{left:50%;bottom:18px;transform:translateX(-50%)}
+#slide-3 .node-5{left:42px;bottom:88px}
+#slide-3 .node-6{left:42px;top:180px}
+/* v-next correction: page 3 discussion should be a single simple box */
+#slide-2 .discussion-strip{display:block;margin-bottom:10px}
+#slide-2 .discussion-item{display:none}
+#slide-2 .discussion-strip:after{content:"John / Ethan roles on legal communication  ·  Communication timing  ·  Communication topics";display:block;background:rgba(255,255,255,.94);border:1px solid rgba(47,128,237,.22);border-left:5px solid var(--cyan);border-radius:16px;padding:12px 14px;color:var(--navy);font-size:14px;font-weight:800;box-shadow:0 12px 28px rgba(16,42,67,.07)}
+
+
+/* v-next correction: place policy text below governance-mode statement */
+#slide-3 .policy-under-subtitle{margin-top:8px;max-width:900px;color:#4E5D6C;font-size:11.2px;line-height:1.32;background:rgba(255,255,255,.72);border:1px solid rgba(201,151,0,.35);border-left:4px solid var(--gold);border-radius:12px;padding:8px 11px;box-shadow:0 8px 18px rgba(16,42,67,.06)}
+#slide-2 .discussion-strip:after{content:"Discussion: Communication Timing, topics and John/Ethan roles";display:block;background:rgba(255,255,255,.94);border:1px solid rgba(47,128,237,.22);border-left:5px solid var(--cyan);border-radius:16px;padding:12px 14px;color:var(--navy);font-size:14px;font-weight:800;box-shadow:0 12px 28px rgba(16,42,67,.07)}
+
+
+/* v-next correction: remove card overlaps on page 2 by using a clean grid model */
+#slide-3 .closed-loop{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;height:auto;min-height:520px;padding:64px 18px 18px;overflow:visible}
+#slide-3 .closed-loop svg{display:none}
+#slide-3 .principle-badge{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:5}
+#slide-3 .loop-center{position:relative;left:auto;top:auto;transform:none;grid-column:1/4;width:320px;height:112px;min-height:112px;border-radius:26px;margin:0 auto 2px;padding:18px 22px;z-index:3}
+#slide-3 .loop-center b{font-size:21px;line-height:1.05}
+#slide-3 .loop-center span{font-size:11px;margin-top:7px}
+#slide-3 .loop-node{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:auto;min-height:128px;padding:12px 13px;z-index:4}
+#slide-3 .node-1,#slide-3 .node-2,#slide-3 .node-3,#slide-3 .node-4,#slide-3 .node-5,#slide-3 .node-6{left:auto;right:auto;top:auto;bottom:auto;transform:none}
+
+
+/* v-next correction: restore circular closed-loop layout without overlap */
+#slide-3 .closed-loop{display:block;position:relative;height:610px;min-height:610px;padding:0;overflow:hidden}
+#slide-3 .closed-loop svg{display:block;position:absolute;inset:0;width:100%;height:100%}
+#slide-3 .principle-badge{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:5}
+#slide-3 .loop-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:220px;height:220px;min-height:220px;border-radius:50%;margin:0;padding:22px;z-index:3}
+#slide-3 .loop-center b{font-size:21px;line-height:1.05}
+#slide-3 .loop-center span{font-size:11px;margin-top:8px}
+#slide-3 .loop-node{position:absolute!important;width:225px;min-height:126px;padding:10px 12px;border-radius:17px;z-index:4}
+#slide-3 .loop-node .n{width:24px;height:24px;border-radius:8px;font-size:10px;margin-bottom:5px}
+#slide-3 .loop-node h3{font-size:14px;margin-bottom:3px;line-height:1.12}
+#slide-3 .loop-node p{font-size:10.8px;line-height:1.25}
+#slide-3 .meta{font-size:10px;gap:2px 6px;margin-top:6px}
+#slide-3 .meta b{font-size:9.3px}
+#slide-3 .node-1{left:50%!important;top:48px!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important}
+#slide-3 .node-2{right:70px!important;top:150px!important;left:auto!important;bottom:auto!important;transform:none!important}
+#slide-3 .node-3{right:70px!important;bottom:82px!important;left:auto!important;top:auto!important;transform:none!important}
+#slide-3 .node-4{left:50%!important;bottom:18px!important;right:auto!important;top:auto!important;transform:translateX(-50%)!important}
+#slide-3 .node-5{left:70px!important;bottom:82px!important;right:auto!important;top:auto!important;transform:none!important}
+#slide-3 .node-6{left:70px!important;top:150px!important;right:auto!important;bottom:auto!important;transform:none!important}
+
+@media print{body{background:white}.deck{height:auto;overflow:visible}.slide{page-break-after:always;width:100vw;height:100vh;min-height:100vh}.footer{bottom:16px}}
+</style>
+</head>
+<body>
+<div class="deck">
+<section class="slide" id="slide-1">
+  <div class="header"><div><div class="kicker">CSO / County Business Acceleration</div><h1>100days actions</h1><div class="subtitle">Priority actions to stabilize the team, align partners, clarify operating roles and accelerate county business delivery.</div></div><div class="badge">For John discussion</div></div>
+  <table>
+    <thead><tr><th>Priority Area</th><th>Action Item</th><th>Timeline</th><th>Progress / Required Push</th></tr></thead>
+    <tbody>
+      <tr><td class="area" rowspan="2">Team Building</td><td><b>New Position Recruitment</b><br><span class="muted">2 CP&A Lead, 1 CP&A(Central)</span></td><td class="timeline">Mid-Jul</td><td class="progress">6.5 John discussion, including regional setting</td></tr>
+      <tr><td><b>All RM / BMM Face-to-Face</b></td><td class="timeline">Mid-Jul</td><td class="progress">6.5 suggestion to John</td></tr>
+      <tr><td class="area" rowspan="2">Partner Communication</td><td><b>Field Visits & Partner Meetings</b><br><span class="muted">Henan · Hubei · Sichuan · Anhui · Hunan</span></td><td class="timeline">Late Jul</td><td class="progress">—</td></tr>
+      <tr><td><b>National Partner Conference</b></td><td class="timeline">Late Aug</td><td class="progress">—</td></tr>
+      <tr><td class="area" rowspan="4">Business Model & Role Definition</td><td><b>Team vision / mission + RM / BMM role & talent profile</b><br><span class="muted">Internal discussion on roadmap</span></td><td class="timeline">Early-Jul</td><td class="progress">—</td></tr>
+      <tr><td><b>Compliance & Legal: initial alignment on roadmap + target</b></td><td class="timeline">Jun</td><td class="progress">6.5 John</td></tr>
+      <tr><td><b>REC co-working mechanism</b></td><td class="timeline">Jun</td><td class="progress">6.5 John</td></tr>
+      <tr><td><b>Platform Team role definition & key KPIs</b></td><td class="timeline">Jun</td><td class="progress">Need John’s support; Jing’s meeting on 9 June</td></tr>
+      <tr><td class="area" rowspan="7">Business Acceleration</td><td><b>County Team onboard tracking & reps. registration</b><br><span class="muted">If needed</span></td><td class="timeline">Jul</td><td class="progress">Questionnaire sent; need to push Legal for quick decision</td></tr>
+      <tr><td><b>1st Regional Business Review</b></td><td class="timeline">Jul</td><td class="progress">6.5 John draft</td></tr>
+      <tr><td><b>Partners’ reps. training assessment</b></td><td class="timeline">Aug</td><td class="progress">—</td></tr>
+      <tr><td><b>Cosentyx County Marketing Strategy</b></td><td class="timeline">Jul</td><td class="progress">—</td></tr>
+      <tr><td><b>Multi-tier healthcare policy opportunity analysis</b></td><td class="timeline">Jul</td><td class="progress">—</td></tr>
+      <tr><td><b>KP business market potential analysis</b></td><td class="timeline">Aug</td><td class="progress">Jing’s meeting on 9 June</td></tr>
+      <tr><td><b>Business Review preparation for Patrick visit</b></td><td class="timeline">Jun</td><td class="progress">6.5 John draft</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Source: CSO priority action plan workbook</span><span>Page 1 / 3</span></div>
+</section>
+
+<section class="slide" id="slide-3">
+  <div class="header"><div><div class="kicker">Operating Model</div><h1>New Governance Framework</h1><div class="subtitle">以新规和独立性为准则，实现“目标一致、合同为纲、边界清晰、机制可管、过程可溯、能力可评”的治理新模式。</div><div class="policy-under-subtitle">《医药代表管理办法》第九条：药品上市许可持有人应当对医药代表建立管理制度，对其聘用、授权、备案、培训考核、药品学术推广活动等进行规范，加强医药代表从业行为的全过程管理。</div></div><div class="badge">Closed-loop governance model</div></div>
+  <div class="gov-layout">
+    <div class="closed-loop" aria-label="Six-dimension closed-loop CSO governance model">
+      <svg viewBox="0 0 760 610" preserveAspectRatio="none">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2F80ED"/></marker>
+          <linearGradient id="ring" x1="0" x2="1"><stop offset="0" stop-color="#2F80ED"/><stop offset="1" stop-color="#18A999"/></linearGradient>
+        </defs>
+        <ellipse cx="380" cy="305" rx="272" ry="220" fill="none" stroke="url(#ring)" stroke-width="8" opacity=".28"/>
+        <path d="M380 82 C560 92 660 190 650 305 C640 430 540 510 390 527 C225 520 110 428 108 305 C106 176 215 92 380 82" fill="none" stroke="#2F80ED" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 11" marker-end="url(#arrowhead)" opacity=".95"/>
+        <path d="M570 118 C650 176 690 250 650 338" fill="none" stroke="#18A999" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowhead)" opacity=".7"/>
+        <path d="M570 490 C485 540 330 555 210 488" fill="none" stroke="#18A999" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowhead)" opacity=".7"/>
+        <path d="M120 220 C160 135 250 90 340 82" fill="none" stroke="#18A999" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowhead)" opacity=".7"/>
+      </svg>
+      <div class="principle-badge">Basic principle: New Policy + Independency</div>
+      <div class="principle-quote">《医药代表管理办法》第九条：药品上市许可持有人应当对医药代表建立管理制度，对其聘用、授权、备案、培训考核、药品学术推广活动等进行规范，加强医药代表从业行为的全过程管理。</div>
+      <div class="loop-center"><b>CSO Partnership Governance</b><span>transparent, auditable and improvable partnership</span></div>
+      <div class="loop-node node-1"><span class="n">01</span><h3>Partnership Objective</h3><p>Long term partnership and sustainable growth.</p><div class="meta"><b>Deliverable</b><span>Partner selection criteria</span><b>Owner</b><span>CP&A Mgr (Central)</span></div></div>
+      <div class="loop-node node-2"><span class="n">02</span><h3>Contract Design</h3><p>Sales contract to Service Contract.</p><div class="meta"><b>Deliverable</b><span>2027 service-based contract</span><b>Owner</b><span>CP&A Mgr (Central)</span></div></div>
+      <div class="loop-node node-3"><span class="n">03</span><h3>Responsibility Boundary</h3><p>R&R 6 Parts 42 Items.</p><div class="meta"><b>Deliverable</b><span>Internal &amp; External R&amp;R list</span><b>Owner</b><span>CP&A team</span></div></div>
+      <div class="loop-node node-4"><span class="n">04</span><h3>Interaction Rules</h3><p>JCC based 4 layers communication.</p><div class="meta"><b>Deliverable</b><span>Meeting cadence, agenda and escalation SOP</span><b>Owner</b><span>CP&A Lead and Mgr</span></div></div>
+      <div class="loop-node node-5"><span class="n">05</span><h3>Traceable Records</h3><p>Shift cooperation risk control from retrospective review to transparent in-process management.</p><div class="meta"><b>Deliverable</b><span>12 Must-have + 8 Optional documentation</span><b>Owner</b><span>CP&A Lead and Mgr</span></div></div>
+      <div class="loop-node node-6"><span class="n">06</span><h3>Partnership Assessment</h3><p>Evaluate partner maturity, drive remediation, and decide continuation, upgrade or exit.</p><div class="meta"><b>Deliverable</b><span>Partner maturity assessment and improvement plan</span><b>Owner</b><span>CP&A Mgr (Central)</span></div></div>
+    </div>
+  </div>
+  <div class="footer"><span>Source logic: CSO cooperation-governance six-dimension model</span><span>Page 2 / 3</span></div>
+</section>
+
+<section class="slide" id="slide-2">
+  <div class="header"><div><div class="kicker">Legal Alignment</div><h1>Communication Strategy with Legal</h1><div class="subtitle" style="white-space:nowrap;max-width:none">Objective: shift the conversation from “approval of individual activities” to “co-design of a controllable CSO governance model”.</div></div><div class="badge">Discussion first: roles, timing, topics</div></div>
+  <div class="discussion-strip">
+    <div class="discussion-item"><b>John / Ethan roles</b><span>Who leads the Legal conversation, who provides business context, and who owns follow-up alignment.</span></div>
+    <div class="discussion-item"><b>Communication timing</b><span>When to engage Legal before June reps. filing decisions and before broader partner communication.</span></div>
+    <div class="discussion-item"><b>Communication topics</b><span>Governance framework, contract orientation, specific practice solutions, and June filing requirements.</span></div>
+  </div>
+  <div class="grid two legal-sequence">
+    <div class="card compact-card">
+      <h3>1. Current issues to unblock</h3>
+      <div class="grid" style="gap:10px">
+        <div class="impact"><div class="num">1</div><div><b>Partner sales reps. onboarding was constrained, leaving many market coverage gaps for over six months</b></div></div>
+        <div class="impact"><div class="num">2</div><div><b>Market strategy and activities are insufficient; NVS events reduced by ~90%</b></div></div>
+        <div class="impact"><div class="num">3</div><div><b>Channel support remains ambiguous (interest conflicts)</b></div></div>
+      </div>
+    </div>
+    <div class="card steps-card">
+      <h3>2. Four-step legal communication strategy</h3>
+      <div class="step"><span class="dot"></span><b>Probe root cause</b><p>Clarify whether the concern is lack of trust in KP, perceived conflict with Channel, or structural ambiguity in CSO governance.</p><span class="pill p-blue">Target: real objection identified</span></div>
+      <div class="step"><span class="dot"></span><b>Confirm legal purpose</b><p>Understand whether Legal aims to stop the model, narrow the scope, or find a compliant operating solution.</p><span class="pill p-gold">Target: common problem statement</span></div>
+      <div class="step"><span class="dot"></span><b>Align on New Governance Framework</b><p>Introduce the new six-dimension governance framework as a risk-control system, not as a way to bypass compliance.</p><span class="pill p-green">Target: governance framework accepted</span></div>
+      <div class="step"><span class="dot"></span><b>Go deeper on specific practices solution</b><p>Suggested topics — <span class="highlight-legal">training assessment, marketing support, DM training, speaker invitation</span>.</p><span class="pill p-orange">Target: actionable solution</span></div>
+    </div>
+  </div>
+  <div class="card support-compact" style="margin-top:16px">
+    <h3>3. Legal support needed</h3>
+    <ul class="support-list">
+      <li><b>1. Alignment:</b> New Governance Framework</li>
+      <li><b>2. Contract:</b> sales oriented to service oriented</li>
+      <li><b>3. Specific Practice:</b> solutions for Training Assessment, marketing support etc.</li>
+      <li><b>4. Decision:</b> requirements for Reps. Filling in June</li>
+    </ul>
+    <p class="note">Positioning to Legal: “We are not asking Legal to approve a high-risk CSO model. We are asking Legal to help build a lower-risk, transparent and auditable cooperation-governance system.”</p>
+  </div>
+  <div class="footer"><span>Purpose: align legal risk control with business execution needs</span><span>Page 3 / 3</span></div>
+</section>
+</div>
+<script>
+document.addEventListener('keydown',e=>{const slides=[...document.querySelectorAll('.slide')];const i=slides.findIndex(s=>s.getBoundingClientRect().top>=-10&&s.getBoundingClientRect().top<window.innerHeight/2);if(e.key==='ArrowDown'||e.key==='PageDown'){slides[Math.min((i<0?0:i)+1,slides.length-1)].scrollIntoView({behavior:'smooth'});}if(e.key==='ArrowUp'||e.key==='PageUp'){slides[Math.max((i<0?0:i)-1,0)].scrollIntoView({behavior:'smooth'});}})
+</script>
+</body>
+</html>
