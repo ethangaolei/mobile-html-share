@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>康臣组织架构重构建议 v15｜Blue Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdfae7;--primary:#1e2bfa;--ink:#101010;--muted:#5a5a6e;
+  --line:rgba(30,43,250,.17);--wash:rgba(30,43,250,.06);--wash2:rgba(30,43,250,.11);
+  --card:rgba(255,255,255,.80);--shadow:0 2px 14px rgba(30,43,250,.06),0 8px 36px rgba(30,43,250,.04);--green-wash:#eef8e9;--green-wash-2:#dff1d8;--green-line:rgba(56,128,72,.24);--green-ink:#2f7143;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2,h3,h4{font-family:"Space Grotesk","PingFang SC",sans-serif;font-weight:650;letter-spacing:-.022em;line-height:1.1}
+.deck{width:100vw;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;width:100vw;height:100vh;padding:2.4vw 3.6vw 7.5vh;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateX(32px);transition:.42s cubic-bezier(.22,.61,.36,1);overflow:hidden;background:var(--bg)}
+.slide.active{opacity:1;pointer-events:auto;transform:translateX(0);z-index:10}
+.slide.prev{transform:translateX(-32px)}
+.slide::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:62px 62px;opacity:.12;pointer-events:none}
+.slide>*{position:relative;z-index:1}
+h1{font-size:clamp(2.8rem,4.5vw,4.8rem);font-weight:730;white-space:nowrap}
+h2{font-size:clamp(1.42rem,1.88vw,2.02rem);max-width:1180px;line-height:1.12}
+h3{font-size:clamp(.88rem,1.0vw,1.1rem);line-height:1.15}
+p,li{font-size:clamp(.72rem,.82vw,.92rem);line-height:1.42;color:var(--muted)}
+b{color:var(--ink)}
+.slide-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1vh;flex-shrink:0;border-bottom:1px solid var(--line);padding-bottom:.75vh}
+.slide-header h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;color:var(--primary);font-weight:600}
+.tag{font-family:"Space Grotesk";font-size:.68rem;font-weight:600;color:var(--primary);background:var(--wash);padding:.28rem .72rem;border-radius:999px;border:1px solid var(--line)}
+.accent-line{width:52px;height:3px;background:var(--primary);border-radius:2px;margin-bottom:1.1rem}
+.slide-content{flex:1;display:flex;flex-direction:column;min-height:0}
+.eyebrow{font-family:"Space Grotesk";font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:.38rem}
+.lead{font-size:clamp(.80rem,.92vw,1.0rem);color:#343444;line-height:1.42;max-width:1050px;margin-top:.38rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.nav-controls{position:fixed;bottom:2.5vh;right:3vw;display:flex;gap:.75rem;z-index:100}
+.nav-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);color:var(--primary);cursor:pointer;font-size:1.02rem;transition:background .18s,color .18s,border-color .18s}
+.nav-btn:hover{background:var(--primary);color:var(--bg);border-color:var(--primary)}
+.nav-btn:disabled{opacity:.3;cursor:default}
+.slide-counter{position:fixed;bottom:2.5vh;left:3vw;z-index:100;font-family:"Space Grotesk";font-size:.78rem;color:var(--muted);letter-spacing:.07em}
+.progress-bar{position:fixed;bottom:0;left:0;height:2px;background:var(--primary);z-index:100;transition:width .3s ease}
+.cover{justify-content:center}
+.cover-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4vw;align-items:center;height:100%}
+.subtitle{font-size:clamp(1.0rem,1.35vw,1.5rem);line-height:1.46;color:var(--muted);max-width:960px;margin-top:1.1rem}
+.meta-row{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.3rem}
+.pill{border:1px solid var(--line);background:var(--wash);color:var(--primary);border-radius:999px;padding:.35rem .72rem;font-size:.75rem;font-weight:500}
+.brief-card{background:rgba(30,43,250,.055);border:1.5px solid var(--line);border-radius:22px;padding:1.4rem 1.5rem}
+.brief-card>h3{color:var(--primary);margin-bottom:.9rem;font-size:1.0rem;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+.brief-row{display:grid;grid-template-columns:98px 1fr;gap:.8rem;border-top:1px solid var(--line);padding:.72rem 0;align-items:start}
+.brief-row:first-of-type{border-top:0}
+.num{font-family:"Space Grotesk";font-weight:800;color:var(--primary);font-size:clamp(1.2rem,1.4vw,1.58rem);line-height:1.0}
+.quote{margin-top:1.2rem;padding:.88rem 1.1rem;border-left:3px solid var(--primary);background:var(--wash);border-radius:0 14px 14px 0}
+.quote p{font-size:clamp(.78rem,.88vw,.96rem);color:#282838;line-height:1.48}
+.p2-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:.9rem;flex:1;min-height:0;margin-top:.6rem}
+.org-card{padding:.65rem}
+.org-head{height:32px;border-radius:999px;background:var(--primary);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.76rem;margin-bottom:.52rem;letter-spacing:.01em}
+.dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.24rem}
+.dept-node{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:10px;padding:.28rem .3rem;text-align:center;min-height:38px;display:flex;flex-direction:column;justify-content:center}
+.dept-node b{font-size:.56rem;line-height:1.12;display:block}
+.dept-node span{font-size:.45rem;color:var(--primary);margin-top:.06rem;display:block;font-weight:500}
+.dept-node.mark{background:var(--wash2)}
+.key-panel{display:grid;grid-template-rows:auto 1fr;gap:.55rem}
+.conclusion-grid{display:grid;grid-template-columns:1fr;gap:.44rem}
+.conclusion{padding:.58rem .68rem;border-left:4px solid var(--primary)}
+.conclusion h3{color:var(--primary);font-size:.86rem;margin-bottom:.18rem}
+.conclusion p{font-size:.66rem;color:#2a2a3a;line-height:1.38}
+.support-card{padding:.58rem .68rem}
+.support-title{font-size:.74rem;color:var(--primary);font-weight:800;margin-bottom:.3rem;letter-spacing:.01em}
+.issue-row{display:grid;grid-template-columns:28px 1fr;gap:.45rem;align-items:start;padding:.3rem 0;border-top:1px solid rgba(30,43,250,.13)}
+.issue-row:first-of-type{border-top:0}
+.issue-no{font-family:"Space Grotesk";font-weight:800;color:var(--primary);font-size:.84rem;line-height:1.0;padding-top:.12rem}
+.issue-row>div:last-child>b{font-size:.66rem;display:block;margin-bottom:.1rem;color:var(--ink)}
+.issue-row p{font-size:.58rem;line-height:1.28;color:#3a3a4a}
+.p3-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:1.1rem;flex:1;min-height:0;margin-top:.78rem}
+.cap-card{padding:.9rem}
+.cap-row{display:grid;grid-template-columns:repeat(5,1fr);gap:.44rem}
+.cap{border:1px solid var(--line);background:rgba(255,255,255,.80);border-radius:16px;padding:.64rem .56rem;min-height:110px}
+.cap h3{font-size:.76rem;color:var(--primary);margin-bottom:.3rem}
+.cap p{font-size:.60rem;line-height:1.32;color:#3a3a4a}
+.platforms{display:grid;grid-template-columns:1fr;gap:.44rem;margin-top:.68rem}
+.platform-box{padding:.58rem .78rem;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.72)}
+.platform-box.main{background:var(--wash2)}
+.platform-box h3{font-size:.80rem;color:var(--primary);margin-bottom:.2rem}
+.platform-box p{font-size:.60rem;line-height:1.28;color:#3a3a4a}
+.platform-box.academic-green{background:linear-gradient(135deg,#d7efd0 0%,#c7e7bd 100%);border-color:var(--green-line)}
+.platform-box.academic-green h3{color:var(--green-ink)}
+.logic-concepts{margin-top:.62rem;padding:.38rem .12rem;display:grid;grid-template-columns:1fr 1fr;gap:.72rem;border-top:1px solid var(--line)}
+.logic-item h3{font-size:.78rem;color:var(--ink);margin-bottom:.2rem}
+.logic-item p{font-size:.60rem;color:#3a3a4a;line-height:1.3}
+.twosteps{display:grid;grid-template-columns:1fr;gap:.78rem}
+.step-card{padding:.92rem}
+.step-card h3{font-size:.98rem;color:var(--primary);margin-bottom:.5rem}
+.step-card li{font-size:.72rem;margin:.34rem 0;color:#2a2a3a;line-height:1.35}
+.step-card .label{font-family:"Space Grotesk";font-size:.62rem;color:var(--primary);font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.4rem}
+.p4-grid{display:grid;grid-template-columns:1fr;gap:.42rem;flex:1;min-height:0;margin-top:.32rem}
+.org-map{padding:.56rem .64rem}
+.topbar{height:30px;background:var(--primary);color:var(--bg);border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.76rem;margin-bottom:.42rem;letter-spacing:.02em}
+.central-row{display:grid;grid-template-columns:repeat(5,1fr);gap:.28rem;margin-bottom:.38rem}
+.bucket{border:1px solid var(--line);background:rgba(255,255,255,.80);border-radius:14px;padding:.38rem .4rem}
+.bucket h3{font-size:.64rem;color:var(--primary);margin-bottom:.22rem;font-weight:700}
+.bucket.commercial-green{background:var(--green-wash);border-color:var(--green-line)}
+.bucket.commercial-green h3{color:var(--green-ink)}
+.dept-mini-grid{display:grid;grid-template-columns:1fr;gap:.14rem}
+.dept-mini{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:9px;padding:.2rem .24rem;text-align:center;min-height:28px;display:flex;flex-direction:column;justify-content:center}
+.dept-mini b{font-size:.48rem;line-height:1.1;color:var(--ink)}
+.dept-mini span{font-size:.38rem;color:var(--primary);margin-top:.04rem}
+.dept-mini.hot{background:var(--primary);border-color:var(--primary)}
+.dept-mini.hot b,.dept-mini.hot span{color:var(--bg)}
+.platform-wide{border-radius:18px;border:1.5px solid var(--line);padding:.52rem .65rem;margin-top:.32rem;background:rgba(255,255,255,.80)}
+.platform-wide.academic-platform{background:linear-gradient(135deg,#d7efd0 0%,#c7e7bd 100%);border-color:var(--green-line)}
+.platform-wide.academic-platform h3{color:var(--green-ink)}
+.platform-wide h3{font-size:.78rem;color:var(--primary);margin-bottom:.22rem}
+.platform-wide p{font-size:.52rem;color:#2a2a3a;line-height:1.2}
+.platform-depts{display:grid;grid-template-columns:repeat(6,1fr);gap:.22rem;margin-top:.28rem}
+.committee-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:.42rem}
+.committee{padding:.46rem .54rem}
+.committee h3{font-size:.72rem;color:var(--primary);margin-bottom:.18rem}
+.committee.green-committee{background:var(--green-wash);border-color:var(--green-line)}
+.committee.green-committee h3{color:var(--green-ink)}
+.committee p,.committee li{font-size:.54rem;color:#2a2a3a;line-height:1.24}
+.committee ul{padding-left:.82rem;margin-top:.12rem}
+.small-label{font-family:"Space Grotesk";font-size:.5rem;color:var(--primary);font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.12rem}
+@media(max-width:1100px){
+  html,body{overflow:auto}
+  .slide{position:relative;height:auto;min-height:100vh;opacity:1;pointer-events:auto;transform:none;overflow:visible}
+  .cover-grid,.p2-grid,.p3-grid,.p4-grid{grid-template-columns:1fr}
+  .central-row,.cap-row,.committee-stack{grid-template-columns:1fr}
+  .nav-controls,.slide-counter,.progress-bar{display:none}
+}
+</style>
+</head>
+<body>
+<div class="deck">
+<section class="slide active cover">
+<div class="slide-header"><h4>Consun Pharmaceutical · Organization Redesign</h4><span class="tag">Consulting Diagnostic Brief · v15</span></div>
+<div class="cover-grid">
+<main>
+<div class="accent-line"></div>
+<h1>康臣组织架构建议</h1>
+<p class="subtitle">从"中药企业"迈向"专注肾科领域的创新医药平台"：以新组织承接新方案与新产品。</p>
+<div class="meta-row">
+<span class="pill">4页汇报版</span><span class="pill">顾问式诊断</span><span class="pill">组织设计建议</span><span class="pill">现实落地版</span>
+</div>
+<div class="quote"><p><b>核心判断：</b>组织调整的关键，并非重新排列汇报关系，而是让疾病领域战略、产品线责任、医学证据、准入放量、供应保障与结果归属形成同一套管理秩序。</p></div>
+</main>
+<aside class="brief-card">
+<h3>战略方向</h3>
+<div class="brief-row"><span class="num">1500亿</span><p>2046年目标市值：通过肾科业务规模与创新药平台估值双重跃迁实现。</p></div>
+<div class="brief-row"><span class="num">115.8亿</span><p>2036年肾科营收目标：组织主轴必须从存量产品经营转向疾病领域平台。</p></div>
+<div class="brief-row"><span class="num">52%</span><p>2036年创新药预计占肾科营收比例：决定估值叙事能否切换为创新药平台。</p></div>
+<div class="brief-row"><span class="num">三件事</span><p>新方案、新产品、新组织；中药是桥，创新药是目的地。</p></div>
+</aside>
+</div>
+</section>
+<section class="slide">
+<div class="slide-header"><h4>01 · Current Architecture Diagnosis</h4><span class="tag">关键结论 · 支撑诊断</span></div>
+<div class="slide-content">
+<div class="eyebrow">Diagnosis</div>
+<h2>现有部门齐全，但未能清晰展现战略聚焦、中央能力与责任秩序</h2>
+<div class="p2-grid">
+<div class="card org-card">
+<div class="org-head">康臣药业集团 · 现有部门与汇报对象</div>
+<div class="dept-grid">
+<div class="dept-node"><b>战略运营中心</b><span>主席 / 总裁</span></div>
+<div class="dept-node"><b>生产与质量管理中心</b><span>总裁</span></div>
+<div class="dept-node"><b>信息数据中心</b><span>总裁</span></div>
+<div class="dept-node"><b>总裁办公室</b><span>总裁</span></div>
+<div class="dept-node"><b>研发中心</b><span>总裁</span></div>
+<div class="dept-node"><b>市场准入及政府事务中心</b><span>副总裁</span></div>
+<div class="dept-node"><b>肾科事业部</b><span>集团副总裁</span></div>
+<div class="dept-node"><b>人力资源中心</b><span>总裁</span></div>
+<div class="dept-node"><b>合规管理中心</b><span>总裁</span></div>
+<div class="dept-node"><b>工程项目办</b><span>主席 / 总裁</span></div>
+<div class="dept-node"><b>妇儿学部</b><span>集团副总裁</span></div>
+<div class="dept-node"><b>财务中心</b><span>总裁</span></div>
+<div class="dept-node"><b>采购与物流管理中心</b><span>总裁</span></div>
+<div class="dept-node"><b>商务中心</b><span>集团副总裁</span></div>
+<div class="dept-node"><b>OTC营销中心</b><span>副总裁</span></div>
+<div class="dept-node"><b>肾科特区</b><span>集团副总裁</span></div>
+<div class="dept-node"><b>医学部</b><span>副总裁</span></div>
+<div class="dept-node"><b>市场部</b><span>主席</span></div>
+<div class="dept-node"><b>商业拓展中心</b><span>材料未列明</span></div>
+<div class="dept-node"><b>影像学部</b><span>集团副总裁</span></div>
+<div class="dept-node"><b>临床招商部</b><span>材料未列明</span></div>
+</div>
+</div>
+<div class="key-panel">
+<div class="conclusion-grid">
+<div class="card conclusion"><h3>战略导向</h3><p>组织设计未能清晰体现公司战略聚焦方向。</p></div>
+<div class="card conclusion"><h3>能力建设</h3><p>中央层级的治理、管理和业务能力才是公司能力的根基。</p></div>
+<div class="card conclusion"><h3>责任秩序</h3><p>跨部门事项缺少固定议题节奏、决策规则与结果归属。</p></div>
+</div>
+<div class="card support-card">
+<div class="support-title">支撑诊断：四类组织问题</div>
+<div class="issue-row"><div class="issue-no">01</div><div><b>汇报半径过宽</b><p><b>判断来源：</b>汇报对象标注。多个中心/部门直接向总裁或高层汇报，管理跨度偏大。</p></div></div>
+<div class="issue-row"><div class="issue-no">02</div><div><b>一线组织与中央组织类型混杂</b><p><b>判断来源：</b>部门命名与组织类型。中心、事业部、学部、特区、招商、OTC并列，组织属性、业务边界与评价方式混在同一张图里。</p></div></div>
+<div class="issue-row"><div class="issue-no">03</div><div><b>跨部门协同未表达</b><p><b>判断来源：</b>现有组织图只呈现纵向归属。研发、医学、市场、准入、商务、营销、供应之间的衔接关系不可见。</p></div></div>
+<div class="issue-row"><div class="issue-no">04</div><div><b>决策机制不可见</b><p><b>判断来源：</b>缺少委员会/议题机制。图上无法判断跨部门事项由谁牵头、如何决策、如何复盘。</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide">
+<div class="slide-header"><h4>02 · Target Model</h4><span class="tag">中央能力 · 两项制度 · 两步走</span></div>
+<div class="slide-content">
+<div class="eyebrow">Target Model</div>
+<h2>5个中央能力和2项制度，支持组织持续发展</h2>
+<p class="lead">目标不是把部门重新摆好看，而是先把中央层级的治理能力、业务能力和决策机制建起来，再承接未来组织架构改革。</p>
+<div class="p3-grid">
+<div class="card cap-card">
+<div class="cap-row">
+<div class="cap"><h3>公司治理</h3><p>建立授权、预算、绩效、合规、数据和重大项目治理的一致规则。</p></div>
+<div class="cap"><h3>研发与创新</h3><p>管理产品线生命周期、自研/合作项目、注册路径和证据生成。</p></div>
+<div class="cap"><h3>卓越商业化</h3><p>把产品策略、医学证据、市场洞察、客户覆盖、商务效率和经营分析连成增长闭环。</p></div>
+<div class="cap"><h3>政府事务与准入创新</h3><p>建立政策、医保、价格、院内准入和支付路径的系统能力。</p></div>
+<div class="cap"><h3>精益制造</h3><p>围绕质量、成本、交付、产能和采购物流建立供应保障能力。</p></div>
+</div>
+<div class="platforms">
+<div class="platform-box"><h3>学术营销平台</h3><p>肾科主业经营、客户覆盖、学术推广、区域执行。</p></div>
+<div class="platform-box"><h3>业务组合平台</h3><p>对非肾科业务进行组合评价、资源选择、协同管理与阶段性整合。</p></div>
+</div>
+<div class="logic-concepts">
+<div class="logic-item"><h3>业务伙伴制度</h3><p>汇报直线保持清晰，中央能力人员嵌入业务团队工作，成为业务管理团队成员。</p></div>
+<div class="logic-item"><h3>跨部门决策制度</h3><p>建立产品线规划、战略增长、精益运营三个专业委员会，固化议题、决策和复盘节奏。</p></div>
+</div>
+</div>
+<div class="twosteps">
+<div class="card step-card">
+<div class="label">Step 1 · Now</div>
+<h3>现实版：先建立管理秩序</h3>
+<ul>
+<li>保持现有销售团队整体稳定，保护现金流与客户覆盖。</li>
+<li>把产品线规划、战略增长、精益运营三类事项固化为委员会机制。</li>
+<li>让医学、市场、BD、商务、准入、生产供应围绕产品线进入同一议题节奏。</li>
+</ul>
+</div>
+<div class="card step-card">
+<div class="label">Step 2 · Next</div>
+<h3>未来版：再完成平台化转型</h3>
+<ul>
+<li>形成肾科产品线全生命周期 owner。</li>
+<li>非肾科业务进入组合评价，按资源、回报、协同和退出逻辑管理。</li>
+<li>总部从行政管控中心升级为专业能力与经营决策中枢。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide">
+<div class="slide-header"><h4>03 · Recommended Realistic Organization</h4><span class="tag">先归类 · 再整合</span></div>
+<div class="slide-content">
+<div class="eyebrow">Organization Blueprint</div>
+<h2>先归类再整合，先提升中央业务能力、决策能力和组织能力，再改革整体组织架构</h2>
+<div class="p4-grid">
+<div class="card org-map">
+<div class="topbar">康臣药业集团</div>
+<div class="central-row">
+<div class="bucket"><h3>公司治理</h3><div class="dept-mini-grid"><div class="dept-mini"><b>总裁办公室</b></div><div class="dept-mini"><b>财务中心</b></div><div class="dept-mini"><b>人力资源中心</b></div><div class="dept-mini"><b>合规管理中心</b></div><div class="dept-mini"><b>信息数据中心</b></div><div class="dept-mini"><b>工程项目办</b></div></div></div>
+<div class="bucket"><h3>研发与创新</h3><div class="dept-mini-grid"><div class="dept-mini"><b>研发中心</b></div><div class="dept-mini"><b>商业拓展中心</b></div></div></div>
+<div class="bucket commercial-green"><h3>卓越商业化</h3><div class="dept-mini-grid"><div class="dept-mini"><b>战略运营中心</b></div><div class="dept-mini"><b>市场部</b></div><div class="dept-mini"><b>医学部</b></div><div class="dept-mini"><b>商务中心</b></div></div></div>
+<div class="bucket"><h3>政府事务与准入创新</h3><div class="dept-mini-grid"><div class="dept-mini"><b>市场准入及政府事务中心</b></div></div></div>
+<div class="bucket"><h3>精益制造</h3><div class="dept-mini-grid"><div class="dept-mini"><b>生产与质量管理中心</b></div><div class="dept-mini"><b>采购与物流管理中心</b></div></div></div>
+</div>
+<div class="platform-wide"><h3>学术营销平台</h3><p>合并承接肾科主业与现有业务团队，后续再按战略聚焦和组合评价逐步整合。</p><div class="platform-depts"><div class="dept-mini"><b>肾科事业部</b></div><div class="dept-mini"><b>肾科特区</b></div><div class="dept-mini"><b>妇儿学部</b></div><div class="dept-mini"><b>影像学部</b></div><div class="dept-mini"><b>OTC营销中心</b></div><div class="dept-mini"><b>临床招商部</b></div></div></div>
+</div>
+<div class="committee-stack">
+<div class="card committee green-committee"><div class="small-label">Committee 01</div><h3>产品线规划委员会</h3><p><b>目的：</b>形成产品线优先级、上市准备、BD/自研项目取舍与退出建议。</p></div>
+<div class="card committee green-committee"><div class="small-label">Committee 02</div><h3>战略增长委员会</h3><p><b>目的：</b>把产品策略、区域增长、重点客户和资源投放纳入统一经营复盘。</p><ul><li>季度业务回顾会（QBR）（总裁/副总裁，战略运营、市场部、商务、政府事务和营销团队）</li><li>市场策略和市场执行策略会（总裁/副总裁，战略运营、市场部、医学、政府事务、合规）</li></ul></div>
+<div class="card committee green-committee"><div class="small-label">Committee 03</div><h3>精益运营委员会</h3><p><b>目的：</b>让销量预测、供应保障、库存、财务管理、渠道管理和销售策略形成闭环。</p><ul><li>S&amp;OP月度会议（总裁/副总裁，生产质量、财务、市场部、商务）</li><li>滚动预算季度会（总裁/副总裁，财务、市场部、业务团队）</li></ul></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="slide-counter"><span id="current">01</span> / <span id="total">04</span></div>
+<div class="nav-controls"><button class="nav-btn" id="prev">←</button><button class="nav-btn" id="next">→</button></div>
+<div class="progress-bar" id="progress"></div>
+<script>const slides=[...document.querySelectorAll('.slide')];let current=0;const cur=document.getElementById('current'),total=document.getElementById('total'),progress=document.getElementById('progress'),prev=document.getElementById('prev'),next=document.getElementById('next');total.textContent=String(slides.length).padStart(2,'0');function show(i){slides[current].classList.remove('active');slides[current].classList.add('prev');current=Math.max(0,Math.min(i,slides.length-1));slides.forEach((s,idx)=>{s.classList.toggle('active',idx===current);s.classList.toggle('prev',idx<current)});cur.textContent=String(current+1).padStart(2,'0');progress.style.width=((current+1)/slides.length*100)+'%';prev.disabled=current===0;next.disabled=current===slides.length-1}prev.onclick=()=>show(current-1);next.onclick=()=>show(current+1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')show(current+1);if(e.key==='ArrowLeft')show(current-1)});show(0);</script>
+</body>
+</html>
