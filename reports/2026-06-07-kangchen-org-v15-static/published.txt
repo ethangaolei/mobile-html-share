@@ -1,0 +1,3 @@
+source=/Users/ethangao/.hermes/projects/kangchen-org/kangchen-org-blue-professional-brief-v15-static.html
+published_at=2026-06-07 21:22:55 CST
+slug=kangchen-org-v15-static
