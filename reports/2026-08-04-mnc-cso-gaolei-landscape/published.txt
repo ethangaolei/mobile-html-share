@@ -1,3 +1,0 @@
-source=/Users/ethangao/.hermes/projects/mnc-cso-html/index.html
-published_at=2026-08-04 15:09:57 KST
-slug=mnc-cso-gaolei-landscape
