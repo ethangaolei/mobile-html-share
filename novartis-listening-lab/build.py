@@ -94,18 +94,6 @@ def slice_transcript(blocks, cues, slide_hint):
     start_b = max(0, start_b)
     end_b = min(len(blocks) - 1, end_b)
     return blocks[start_b:end_b + 1]
-    if start_b is None and end_b is None:
-        return fallback_slice(blocks, slide_hint)
-    if start_b is None:
-        start_b = end_b
-    if end_b is None:
-        end_b = start_b
-    if end_b < start_b:
-        start_b, end_b = end_b, start_b
-    # clamp
-    start_b = max(0, start_b)
-    end_b = min(len(blocks) - 1, end_b)
-    return blocks[start_b:end_b + 1]
 
 def fallback_slice(blocks, slide_hint):
     if not blocks:
@@ -130,6 +118,16 @@ def render_transcript(slice_blocks):
             cur_slide = b["slide"]
         out.append(f'<p>{esc(b["text"])}</p>')
     return "\n".join(out) if out else '<p class="idle">（该片段逐字稿将在转写完成后生成）</p>'
+
+def render_transcript_ai(cues):
+    """Render a lesson transcript from its own (offset) VTT cues when no official
+    transcript exists. Marked AI-transcribed, non-official — for核对 use only."""
+    if not cues:
+        return '<p class="idle">（该片段无逐字稿）</p>'
+    out = ['<span class="slide-mark">— AI 转写 · 非官方文本，可能有误，以字幕音频为准 —</span>']
+    for c in cues:
+        out.append(f'<p>{esc(c[2])}</p>')
+    return "\n".join(out)
 
 LESSON_TMPL = """<!doctype html>
 <html lang="zh-CN">
@@ -162,7 +160,7 @@ LESSON_TMPL = """<!doctype html>
   </div>
 
   <details class="transcript">
-    <summary>完整英文逐字稿（诺华官方文本，核对用）</summary>
+    <summary>{transcriptLabel}</summary>
     <div class="transcript-body">
 {transcript}
     </div>
@@ -223,11 +221,9 @@ INDEX_TMPL = """<!doctype html>
   <span class="sub">诺华高管发言 · 商务英语听力</span>
 </header>
 <main>
-  <p style="color:var(--muted);font-size:14px;margin:0 0 8px">Week 1 · 6 段。每段听两遍：第一遍裸听抓大意，第二遍开英文字幕对位，再用官方逐字稿核对。</p>
-  <ol class="lesson-list">
-{items}
-  </ol>
-  <p style="font-size:12px;color:#8295a8;margin-top:18px">来源：Novartis 2024 Q2 Investor Presentation &amp; Q&A（2024-07）。字幕由 AI 本地转写并对齐时间轴，逐字稿为诺华官方文本；仅供个人英语学习，内容为历史信息，不代表当前业务状态。</p>
+  <p style="color:var(--muted);font-size:14px;margin:0 0 14px">诺华高管发言 · 商务英语听力。每段听两遍：第一遍裸听抓大意，第二遍开英文字幕对位，再用逐字稿核对。</p>
+{groups}
+  <p style="font-size:12px;color:#8295a8;margin-top:18px">来源：Novartis 2024 Q2、2026 Q1/Q2 Investor Presentation。2024 逐字稿为诺华官方文本，2026 逐字稿为 AI 转写（非官方）；字幕均由 AI 本地转写。仅供个人英语学习，内容为历史信息，不代表当前业务状态。</p>
 </main>
 </div>
 </body>
@@ -243,8 +239,15 @@ def main():
     built = []
     for L in lessons:
         cues = load_vtt(os.path.join(VTTDIR, L["vttFile"]))
-        sl = slice_transcript(blocks, cues, L.get("slide"))
-        transcript_html = render_transcript(sl)
+        if L.get("transcriptMode") == "ai" and cues:
+            transcript_html = render_transcript_ai(cues)
+            nblk = len(cues)
+            transcript_label = "完整英文逐字稿（AI 转写·非官方，核对用）"
+        else:
+            sl = slice_transcript(blocks, cues, L.get("slide"))
+            transcript_html = render_transcript(sl)
+            nblk = len(sl)
+            transcript_label = "完整英文逐字稿（诺华官方文本，核对用）"
         has_vtt = cues is not None and len(cues) > 0
         track = (f'<track kind="subtitles" src="../assets/vtt/{L["vttFile"]}" '
                  f'srclang="en" label="English" default>') if has_vtt else '<!-- VTT 未就绪，字幕待生成 -->'
@@ -255,25 +258,34 @@ def main():
             source=esc(L["source"]), date=esc(L["date"]), speaker=esc(L["speaker"]),
             duration=esc(L["duration"]), sourceUrl=esc(L["sourceUrl"]),
             audioFile=esc(L["audioFile"]), track=track, transcript=transcript_html,
+            transcriptLabel=transcript_label,
             terms=terms, questions=qs, disclaimer=esc(DISCLAIMER),
         )
         out = os.path.join(OUT_LESSONS, f'{L["id"]}.html')
         open(out, "w", encoding="utf-8").write(page)
-        built.append((L, has_vtt, len(sl)))
-        print(f"{L['id']}: vtt={'yes' if has_vtt else 'NO'} | transcript blocks={len(sl)} -> {out}")
+        built.append((L, has_vtt, nblk))
+        print(f"{L['id']}: vtt={'yes' if has_vtt else 'NO'} | transcript cues={nblk} -> {out}")
 
-    # index
-    items = []
+    # index — group by quarter
+    from collections import OrderedDict
+    groups = OrderedDict()
     for L, has_vtt, nblk in built:
-        badge = "" if has_vtt else ' <span style="color:#c0392b;font-size:11px">(字幕待生成)</span>'
-        items.append(
-            f'<li><a href="lessons/{L["id"]}.html">'
-            f'<span class="num">{L["id"]}</span>'
-            f'<span class="info"><h2>{esc(L["title"])} · {esc(L["titleCn"])}{badge}</h2>'
-            f'<p>{esc(L["theme"])} · {esc(L["speaker"])}</p></span>'
-            f'<span class="dur">{esc(L["duration"])}</span></a></li>'
-        )
-    open(INDEX, "w", encoding="utf-8").write(INDEX_TMPL.format(items="\n".join(items)))
+        g = L.get("group") or "2024 Q2 · Week 1"
+        groups.setdefault(g, []).append((L, has_vtt))
+    group_html = []
+    for g, members in groups.items():
+        lis = []
+        for L, has_vtt in members:
+            badge = "" if has_vtt else ' <span style="color:#c0392b;font-size:11px">(字幕待生成)</span>'
+            lis.append(
+                f'<li><a href="lessons/{L["id"]}.html">'
+                f'<span class="num">{L["id"]}</span>'
+                f'<span class="info"><h2>{esc(L["title"])} · {esc(L["titleCn"])}{badge}</h2>'
+                f'<p>{esc(L["theme"])} · {esc(L["speaker"])}</p></span>'
+                f'<span class="dur">{esc(L["duration"])}</span></a></li>'
+            )
+        group_html.append(f'<section class="grp"><h2>{esc(g)}</h2><ol class="lesson-list">{"".join(lis)}</ol></section>')
+    open(INDEX, "w", encoding="utf-8").write(INDEX_TMPL.format(groups="\n".join(group_html)))
     print(f"index -> {INDEX}")
     print(f"built {len(built)} lessons; vtt ready: {sum(1 for _,h,_ in built if h)}/{len(built)}")
 

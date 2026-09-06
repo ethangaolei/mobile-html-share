@@ -13,15 +13,25 @@
     "vttFile": "D1-commercial-update.vtt",
     "slide": 6,
     "terms": [
-      {"en": "weekly TRx", "cn": "每周处方量"},
-      {"en": "core geographies", "cn": "核心地区"},
-      {"en": "LOE (loss of exclusivity)", "cn": "专利到期"}
+      {
+        "en": "weekly TRx",
+        "cn": "每周处方量"
+      },
+      {
+        "en": "core geographies",
+        "cn": "核心地区"
+      },
+      {
+        "en": "LOE (loss of exclusivity)",
+        "cn": "专利到期"
+      }
     ],
     "questions": [
       "Entresto 的美国和除美外两个增长率分别是多少？",
       "除美以外，哪两个国家贡献了增长？",
       "对 Entresto LOE 的时间假设是什么？"
-    ]
+    ],
+    "group": "2024 Q2 · Week 1"
   },
   {
     "id": "D2",
@@ -37,15 +47,25 @@
     "vttFile": "D2-brand-growth.vtt",
     "slide": 7,
     "terms": [
-      {"en": "peak sales guidance", "cn": "峰值销售指引"},
-      {"en": "franchise", "cn": "产品线/业务集群"},
-      {"en": "in-line brand", "cn": "在售品牌"}
+      {
+        "en": "peak sales guidance",
+        "cn": "峰值销售指引"
+      },
+      {
+        "en": "franchise",
+        "cn": "产品线/业务集群"
+      },
+      {
+        "en": "in-line brand",
+        "cn": "在售品牌"
+      }
     ],
     "questions": [
       "本段提到哪个品牌的增长数据？",
       "发言人对该品牌的峰值销售预期是什么？",
       "有没有给出时间表或里程碑？"
-    ]
+    ],
+    "group": "2024 Q2 · Week 1"
   },
   {
     "id": "D3",
@@ -61,15 +81,25 @@
     "vttFile": "D3-analyst-question-1.vtt",
     "slide": 13,
     "terms": [
-      {"en": "guidance", "cn": "业绩指引"},
-      {"en": "consensus", "cn": "市场一致预期"},
-      {"en": "reiterate", "cn": "重申"}
+      {
+        "en": "guidance",
+        "cn": "业绩指引"
+      },
+      {
+        "en": "consensus",
+        "cn": "市场一致预期"
+      },
+      {
+        "en": "reiterate",
+        "cn": "重申"
+      }
     ],
     "questions": [
       "分析师问的是什么主题？",
       "管理层的立场是确认、修正还是回避？",
       "管理层给出了什么后续安排或限定条件？"
-    ]
+    ],
+    "group": "2024 Q2 · Week 1"
   },
   {
     "id": "D4",
@@ -85,15 +115,25 @@
     "vttFile": "D4-market-opportunity.vtt",
     "slide": 15,
     "terms": [
-      {"en": "market opportunity", "cn": "市场机会"},
-      {"en": "addressable population", "cn": "可及人群"},
-      {"en": "pipeline", "cn": "研发管线"}
+      {
+        "en": "market opportunity",
+        "cn": "市场机会"
+      },
+      {
+        "en": "addressable population",
+        "cn": "可及人群"
+      },
+      {
+        "en": "pipeline",
+        "cn": "研发管线"
+      }
     ],
     "questions": [
       "本段描述的是哪个市场机会？",
       "哪些是事实（数据）、哪些是观点（判断）？",
       "发言人对机会的时间预期是确定还是条件性？"
-    ]
+    ],
+    "group": "2024 Q2 · Week 1"
   },
   {
     "id": "D5",
@@ -109,15 +149,25 @@
     "vttFile": "D5-uptake-barriers.vtt",
     "slide": 18,
     "terms": [
-      {"en": "uptake", "cn": "采用/上量"},
-      {"en": "access", "cn": "市场准入"},
-      {"en": "reimbursement", "cn": "医保报销"}
+      {
+        "en": "uptake",
+        "cn": "采用/上量"
+      },
+      {
+        "en": "access",
+        "cn": "市场准入"
+      },
+      {
+        "en": "reimbursement",
+        "cn": "医保报销"
+      }
     ],
     "questions": [
       "提到的主要采用障碍是什么？",
       "发言人对克服障碍用的是承诺语气还是条件语气？",
       "有没有给出明确的解决时间或负责人？"
-    ]
+    ],
+    "group": "2024 Q2 · Week 1"
   },
   {
     "id": "D6",
@@ -133,14 +183,1686 @@
     "vttFile": "D6-commercial-execution.vtt",
     "slide": 21,
     "terms": [
-      {"en": "execution", "cn": "执行"},
-      {"en": "milestone", "cn": "里程碑"},
-      {"en": "action item", "cn": "行动项"}
+      {
+        "en": "execution",
+        "cn": "执行"
+      },
+      {
+        "en": "milestone",
+        "cn": "里程碑"
+      },
+      {
+        "en": "action item",
+        "cn": "行动项"
+      }
     ],
     "questions": [
       "本段讨论的是哪项商业执行？",
       "不同发言人的立场是否一致？",
       "明确了哪些行动项和负责人/时间？"
+    ],
+    "group": "2024 Q2 · Week 1"
+  },
+  {
+    "id": "D7",
+    "group": "2026 Q1",
+    "title": "Q1 2026 opening remarks",
+    "titleCn": "一季度开场",
+    "theme": "电话会议开场与前瞻性声明",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:33",
+    "audioFile": "D7-q1-2026.mp3",
+    "vttFile": "D7-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "forward-looking statements",
+        "cn": "前瞻性声明"
+      },
+      {
+        "en": "conference call",
+        "cn": "电话会议"
+      }
+    ],
+    "questions": [
+      "这是哪一季度的电话会议？",
+      "开场强调了哪类信息风险？",
+      "接下来要讲什么？"
+    ]
+  },
+  {
+    "id": "D8",
+    "group": "2026 Q1",
+    "title": "Breast cancer momentum",
+    "titleCn": "乳腺癌增长动能",
+    "theme": "品牌增长与全球上市",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:33",
+    "audioFile": "D8-q1-2026.mp3",
+    "vttFile": "D8-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "momentum",
+        "cn": "动能"
+      },
+      {
+        "en": "metastatic breast cancer",
+        "cn": "转移性乳腺癌"
+      },
+      {
+        "en": "ex-U.S. market",
+        "cn": "除美市场"
+      }
+    ],
+    "questions": [
+      "哪两个乳腺癌领域有动能？",
+      "全球上市带来什么？",
+      "除美市场表现如何？"
+    ]
+  },
+  {
+    "id": "D9",
+    "group": "2026 Q1",
+    "title": "Kesimpta runway",
+    "titleCn": "Kesimpta 增长空间",
+    "theme": "Kesimpta 美国执行",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:35",
+    "audioFile": "D9-q1-2026.mp3",
+    "vttFile": "D9-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "runway",
+        "cn": "增长空间"
+      },
+      {
+        "en": "operational execution",
+        "cn": "运营执行"
+      }
+    ],
+    "questions": [
+      "Kesimpta 哪个市场表现好？",
+      "增长靠什么？",
+      "发言人对未来怎么看？"
+    ]
+  },
+  {
+    "id": "D10",
+    "group": "2026 Q1",
+    "title": "Growth drivers & urology",
+    "titleCn": "增长驱动与泌尿科",
+    "theme": "深化与科室扩张",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:32",
+    "audioFile": "D10-q1-2026.mp3",
+    "vttFile": "D10-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "growth driver",
+        "cn": "增长驱动"
+      },
+      {
+        "en": "urology",
+        "cn": "泌尿科"
+      },
+      {
+        "en": "expansion",
+        "cn": "扩张"
+      }
+    ],
+    "questions": [
+      "两个增长驱动是什么？",
+      "扩张到哪个科室？",
+      "为什么重要？"
+    ]
+  },
+  {
+    "id": "D11",
+    "group": "2026 Q1",
+    "title": "Lectio rare disease",
+    "titleCn": "Lectio 罕见病",
+    "theme": "罕见病适应症与儿科",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:36",
+    "audioFile": "D11-q1-2026.mp3",
+    "vttFile": "D11-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "rare disease",
+        "cn": "罕见病"
+      },
+      {
+        "en": "pediatric",
+        "cn": "儿科"
+      },
+      {
+        "en": "strategic exclusivity",
+        "cn": "战略独占"
+      }
+    ],
+    "questions": [
+      "Lectio 针对几个罕见病适应症？",
+      "战略独占意味着什么？",
+      "儿科为什么重要？"
+    ]
+  },
+  {
+    "id": "D12",
+    "group": "2026 Q1",
+    "title": "Cosentyx in HS",
+    "titleCn": "Cosentyx 化脓性汗腺炎",
+    "theme": "HS 市场份额",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:32",
+    "audioFile": "D12-q1-2026.mp3",
+    "vttFile": "D12-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "hidradenitis suppurativa",
+        "cn": "化脓性汗腺炎"
+      },
+      {
+        "en": "NBRX naive share",
+        "cn": "新患者份额"
+      }
+    ],
+    "questions": [
+      "HS 新患者份额约多少？",
+      "1 月为什么下滑？",
+      "份额趋势如何？"
+    ]
+  },
+  {
+    "id": "D13",
+    "group": "2026 Q1",
+    "title": "Kidney failure reduction",
+    "titleCn": "肾病进展减缓",
+    "theme": "肾病数据与 FDA 优先审评",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:35",
+    "audioFile": "D13-q1-2026.mp3",
+    "vttFile": "D13-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "kidney failure",
+        "cn": "肾衰"
+      },
+      {
+        "en": "priority review",
+        "cn": "优先审评"
+      },
+      {
+        "en": "progression",
+        "cn": "进展"
+      }
+    ],
+    "questions": [
+      "肾衰进展减少了百分之多少？",
+      "FDA 给了什么？",
+      "这意味着什么？"
+    ]
+  },
+  {
+    "id": "D14",
+    "group": "2026 Q1",
+    "title": "CINDU approval track",
+    "titleCn": "CINDU 批准路径",
+    "theme": "适应症扩展与申报",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:32",
+    "audioFile": "D14-q1-2026.mp3",
+    "vttFile": "D14-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "safety profile",
+        "cn": "安全性特征"
+      },
+      {
+        "en": "subtype",
+        "cn": "亚型"
+      },
+      {
+        "en": "submission",
+        "cn": "申报"
+      }
+    ],
+    "questions": [
+      "第一个亚型审批进展？",
+      "另两个亚型何时申报？",
+      "安全性如何？"
+    ]
+  },
+  {
+    "id": "D15",
+    "group": "2026 Q1",
+    "title": "Pipeline readouts",
+    "titleCn": "管线读出",
+    "theme": "下半年管线里程碑",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:34",
+    "audioFile": "D15-q1-2026.mp3",
+    "vttFile": "D15-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "pipeline",
+        "cn": "管线"
+      },
+      {
+        "en": "readout",
+        "cn": "数据读出"
+      }
+    ],
+    "questions": [
+      "这段讲什么主题？",
+      "下半年管线有什么？",
+      "发言人态度？"
+    ]
+  },
+  {
+    "id": "D16",
+    "group": "2026 Q1",
+    "title": "Sales & copay dynamics",
+    "titleCn": "销售与共付",
+    "theme": "销售下降与基数效应",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:33",
+    "audioFile": "D16-q1-2026.mp3",
+    "vttFile": "D16-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "copay",
+        "cn": "共付"
+      },
+      {
+        "en": "gross-to-net",
+        "cn": "毛转净"
+      },
+      {
+        "en": "base",
+        "cn": "基数"
+      }
+    ],
+    "questions": [
+      "销售下降百分之几？",
+      "共付下降多少？",
+      "为什么有正向毛转净？"
+    ]
+  },
+  {
+    "id": "D17",
+    "group": "2026 Q1",
+    "title": "Growing through LOE",
+    "titleCn": "专利到期期增长",
+    "theme": "LOE 期顶线增长",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:31",
+    "audioFile": "D17-q1-2026.mp3",
+    "vttFile": "D17-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "top line",
+        "cn": "顶线"
+      },
+      {
+        "en": "LOE",
+        "cn": "专利到期"
+      },
+      {
+        "en": "core operating income",
+        "cn": "核心营业利润"
+      }
+    ],
+    "questions": [
+      "公司在什么时期仍增长顶线？",
+      "LOE 是什么？",
+      "核心利润如何？"
+    ]
+  },
+  {
+    "id": "D18",
+    "group": "2026 Q1",
+    "title": "Q&A opening",
+    "titleCn": "问答开场",
+    "theme": "转入问答环节",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:31",
+    "audioFile": "D18-q1-2026.mp3",
+    "vttFile": "D18-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "open the line",
+        "cn": "开放提问"
+      }
+    ],
+    "questions": [
+      "这段标志什么环节开始？",
+      "提问交给谁？"
+    ]
+  },
+  {
+    "id": "D19",
+    "group": "2026 Q1",
+    "title": "Q&A: HS vs MS",
+    "titleCn": "问答：HS 与 MS",
+    "theme": "适应症比较",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D19-q1-2026.mp3",
+    "vttFile": "D19-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "indication",
+        "cn": "适应症"
+      }
+    ],
+    "questions": [
+      "分析师问什么？",
+      "HS 和 MS 哪个可能更大？",
+      "管理层怎么答？"
+    ]
+  },
+  {
+    "id": "D20",
+    "group": "2026 Q1",
+    "title": "Growth rate outlook",
+    "titleCn": "增长率展望",
+    "theme": "增长率预期",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:33",
+    "audioFile": "D20-q1-2026.mp3",
+    "vttFile": "D20-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "double-digit growth",
+        "cn": "双位数增长"
+      }
+    ],
+    "questions": [
+      "增长在什么区间？",
+      "能否回到高增长？",
+      "为什么？"
+    ]
+  },
+  {
+    "id": "D21",
+    "group": "2026 Q1",
+    "title": "Patient selection & CV",
+    "titleCn": "患者选择与心血管",
+    "theme": "患者分型与终点",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D21-q1-2026.mp3",
+    "vttFile": "D21-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "patient group",
+        "cn": "患者人群"
+      },
+      {
+        "en": "cardiovascular",
+        "cn": "心血管"
+      },
+      {
+        "en": "stroke",
+        "cn": "卒中"
+      }
+    ],
+    "questions": [
+      "患者分型为什么重要？",
+      "哪两个终点被比较？"
+    ]
+  },
+  {
+    "id": "D22",
+    "group": "2026 Q1",
+    "title": "Launch competition",
+    "titleCn": "上市竞争",
+    "theme": "竞品上市策略",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D22-q1-2026.mp3",
+    "vttFile": "D22-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "launch",
+        "cn": "上市"
+      },
+      {
+        "en": "progress",
+        "cn": "推进"
+      }
+    ],
+    "questions": [
+      "公司和对手在比什么？",
+      "上市关键是什么？"
+    ]
+  },
+  {
+    "id": "D23",
+    "group": "2026 Q1",
+    "title": "Deflecting competitor Q",
+    "titleCn": "回避竞品问题",
+    "theme": "管理层回避策略",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D23-q1-2026.mp3",
+    "vttFile": "D23-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "deflect",
+        "cn": "回避"
+      },
+      {
+        "en": "separate topic",
+        "cn": "另起话题"
+      }
+    ],
+    "questions": [
+      "分析师问什么被回避？",
+      "管理层怎么处理？"
+    ]
+  },
+  {
+    "id": "D24",
+    "group": "2026 Q1",
+    "title": "NEJM publication",
+    "titleCn": "NEJM 发表",
+    "theme": "数据发表与权威",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D24-q1-2026.mp3",
+    "vttFile": "D24-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "data set",
+        "cn": "数据集"
+      },
+      {
+        "en": "New England Journal of Medicine",
+        "cn": "新英格兰医学杂志"
+      }
+    ],
+    "questions": [
+      "数据发表在哪？",
+      "发表意味着什么？"
+    ]
+  },
+  {
+    "id": "D25",
+    "group": "2026 Q1",
+    "title": "ARR data discussion",
+    "titleCn": "ARR 数据讨论",
+    "theme": "年复发率数据",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:33",
+    "audioFile": "D25-q1-2026.mp3",
+    "vttFile": "D25-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "ARR",
+        "cn": "年复发率"
+      }
+    ],
+    "questions": [
+      "讨论什么数据？",
+      "ARR 指什么？",
+      "为什么重复致谢？"
+    ]
+  },
+  {
+    "id": "D26",
+    "group": "2026 Q1",
+    "title": "Steady uptake",
+    "titleCn": "稳步上量",
+    "theme": "上量节奏预期",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:35",
+    "audioFile": "D26-q1-2026.mp3",
+    "vttFile": "D26-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "steady increase",
+        "cn": "稳步增长"
+      },
+      {
+        "en": "hockey stick",
+        "cn": "曲棍球棒式"
+      }
+    ],
+    "questions": [
+      "上量是稳步还是曲棍球棒式？",
+      "为什么？"
+    ]
+  },
+  {
+    "id": "D27",
+    "group": "2026 Q1",
+    "title": "Longitudinal data & muscle",
+    "titleCn": "纵向数据与肌肉",
+    "theme": "长期数据与症状",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:34",
+    "audioFile": "D27-q1-2026.mp3",
+    "vttFile": "D27-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "longitudinal data",
+        "cn": "纵向数据"
+      },
+      {
+        "en": "muscle manifestations",
+        "cn": "肌肉症状"
+      }
+    ],
+    "questions": [
+      "纵向数据有什么用？",
+      "最重要的症状是什么？"
+    ]
+  },
+  {
+    "id": "D28",
+    "group": "2026 Q1",
+    "title": "2027 readouts",
+    "titleCn": "2027 数据读出",
+    "theme": "未来里程碑",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:32",
+    "audioFile": "D28-q1-2026.mp3",
+    "vttFile": "D28-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "upside",
+        "cn": "上行空间"
+      },
+      {
+        "en": "readout",
+        "cn": "数据读出"
+      }
+    ],
+    "questions": [
+      "2027 有什么？",
+      "上行空间指什么？"
+    ]
+  },
+  {
+    "id": "D29",
+    "group": "2026 Q1",
+    "title": "LOE extension debate",
+    "titleCn": "专利到期延长讨论",
+    "theme": "行业 LOE 动态",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D29-q1-2026.mp3",
+    "vttFile": "D29-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "LOE",
+        "cn": "专利到期"
+      },
+      {
+        "en": "end of the decade",
+        "cn": "十年末"
+      }
+    ],
+    "questions": [
+      "对手在说什么？",
+      "LOE 延长意味着什么？"
+    ]
+  },
+  {
+    "id": "D30",
+    "group": "2026 Q1",
+    "title": "Cautious outlook",
+    "titleCn": "谨慎展望",
+    "theme": "不过度承诺",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:35",
+    "audioFile": "D30-q1-2026.mp3",
+    "vttFile": "D30-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "over-promise",
+        "cn": "过度承诺"
+      }
+    ],
+    "questions": [
+      "对什么保持谨慎？",
+      "为什么不 over-promise？"
+    ]
+  },
+  {
+    "id": "D31",
+    "group": "2026 Q1",
+    "title": "Pipeline studies launch",
+    "titleCn": "管线研究启动",
+    "theme": "适应症研究启动",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:35",
+    "audioFile": "D31-q1-2026.mp3",
+    "vttFile": "D31-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "atopic dermatitis",
+        "cn": "特应性皮炎"
+      },
+      {
+        "en": "vitiligo",
+        "cn": "白癜风"
+      },
+      {
+        "en": "recruiting",
+        "cn": "招募中"
+      }
+    ],
+    "questions": [
+      "哪两个研究在推进？",
+      "分别什么状态？"
+    ]
+  },
+  {
+    "id": "D32",
+    "group": "2026 Q1",
+    "title": "Gene therapy dosing",
+    "titleCn": "基因治疗剂量",
+    "theme": "基因治疗剂量调整",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:37",
+    "audioFile": "D32-q1-2026.mp3",
+    "vttFile": "D32-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "gene therapy",
+        "cn": "基因治疗"
+      },
+      {
+        "en": "dose",
+        "cn": "剂量"
+      }
+    ],
+    "questions": [
+      "哪个产品剂量在调？",
+      "底层基因治疗变了吗？"
+    ]
+  },
+  {
+    "id": "D33",
+    "group": "2026 Q1",
+    "title": "Phase 3 design",
+    "titleCn": "III 期设计",
+    "theme": "III 期方案确认",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:33",
+    "audioFile": "D33-q1-2026.mp3",
+    "vttFile": "D33-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "Phase 3",
+        "cn": "III 期"
+      },
+      {
+        "en": "plan design",
+        "cn": "方案设计"
+      },
+      {
+        "en": "dose",
+        "cn": "剂量"
+      }
+    ],
+    "questions": [
+      "要确认什么？",
+      "哪个剂量推进？",
+      "还在讨论什么？"
+    ]
+  },
+  {
+    "id": "D34",
+    "group": "2026 Q1",
+    "title": "Launch & close",
+    "titleCn": "上市与收尾",
+    "theme": "IV 上市与转场",
+    "source": "Novartis 2026 Q1 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-04",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "3:33",
+    "audioFile": "D34-q1-2026.mp3",
+    "vttFile": "D34-q1-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "IV",
+        "cn": "静脉"
+      }
+    ],
+    "questions": [
+      "哪个上市在推进？",
+      "这段在做什么？"
+    ]
+  },
+  {
+    "id": "D35",
+    "group": "2026 Q2",
+    "title": "Q2 2026 opening",
+    "titleCn": "二季度开场",
+    "theme": "电话会议开场与前瞻性声明",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:33",
+    "audioFile": "D35-q2-2026.mp3",
+    "vttFile": "D35-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "forward-looking statements",
+        "cn": "前瞻性声明"
+      },
+      {
+        "en": "conference call",
+        "cn": "电话会议"
+      }
+    ],
+    "questions": [
+      "这是哪季度的电话会议？",
+      "开场强调什么？"
+    ]
+  },
+  {
+    "id": "D36",
+    "group": "2026 Q2",
+    "title": "Breast cancer leadership",
+    "titleCn": "乳腺癌领导力",
+    "theme": "乳腺癌市场份额",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:31",
+    "audioFile": "D36-q2-2026.mp3",
+    "vttFile": "D36-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "first line",
+        "cn": "一线"
+      },
+      {
+        "en": "NBRX/TRX",
+        "cn": "新处方/处方量"
+      }
+    ],
+    "questions": [
+      "哪两个乳腺癌领域领先？",
+      "NBRX 和 TRX 指什么？"
+    ]
+  },
+  {
+    "id": "D37",
+    "group": "2026 Q2",
+    "title": "Expansion opportunity",
+    "titleCn": "扩张机会",
+    "theme": "未满足需求与扩张",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:34",
+    "audioFile": "D37-q2-2026.mp3",
+    "vttFile": "D37-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "B-cell therapies",
+        "cn": "B 细胞疗法"
+      },
+      {
+        "en": "expansion",
+        "cn": "扩张"
+      }
+    ],
+    "questions": [
+      "多少患者用旧疗法？",
+      "扩张机会在哪？"
+    ]
+  },
+  {
+    "id": "D38",
+    "group": "2026 Q2",
+    "title": "Lectio 59% growth",
+    "titleCn": "Lectio 59% 增长",
+    "theme": "Lectio 强劲增长",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:34",
+    "audioFile": "D38-q2-2026.mp3",
+    "vttFile": "D38-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "strong demand",
+        "cn": "强劲需求"
+      }
+    ],
+    "questions": [
+      "Lectio 增长百分之多少？",
+      "美国增长多少？"
+    ]
+  },
+  {
+    "id": "D39",
+    "group": "2026 Q2",
+    "title": "Global footprint",
+    "titleCn": "全球布局",
+    "theme": "跨国批准与份额",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:34",
+    "audioFile": "D39-q2-2026.mp3",
+    "vttFile": "D39-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "approved",
+        "cn": "获批"
+      },
+      {
+        "en": "first-line NBRX leadership",
+        "cn": "一线份额领先"
+      }
+    ],
+    "questions": [
+      "在多少个除美国家获批？",
+      "日本达到什么地位？"
+    ]
+  },
+  {
+    "id": "D40",
+    "group": "2026 Q2",
+    "title": "Launches & approvals",
+    "titleCn": "上市与批准",
+    "theme": "区域上市与下半年批准",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:30",
+    "audioFile": "D40-q2-2026.mp3",
+    "vttFile": "D40-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "EMEA",
+        "cn": "欧洲药品管理局"
+      },
+      {
+        "en": "expansion",
+        "cn": "扩张"
+      }
+    ],
+    "questions": [
+      "上市在哪些区域推进？",
+      "下半年有什么批准？"
+    ]
+  },
+  {
+    "id": "D41",
+    "group": "2026 Q2",
+    "title": "DMD FDA submission",
+    "titleCn": "DMD FDA 申报",
+    "theme": "首类抗体寡核缀物申报",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:31",
+    "audioFile": "D41-q2-2026.mp3",
+    "vttFile": "D41-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "antibody oligoconjugate",
+        "cn": "抗体寡核缀物"
+      },
+      {
+        "en": "accelerated approval",
+        "cn": "加速批准"
+      },
+      {
+        "en": "DMD",
+        "cn": "杜氏肌营养不良"
+      }
+    ],
+    "questions": [
+      "哪类药首次 FDA 申报？",
+      "什么适应症？",
+      "走什么批准路径？"
+    ]
+  },
+  {
+    "id": "D42",
+    "group": "2026 Q2",
+    "title": "ALS & pipeline",
+    "titleCn": "ALS 与管线",
+    "theme": "下半年管线",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:35",
+    "audioFile": "D42-q2-2026.mp3",
+    "vttFile": "D42-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "ALS",
+        "cn": "肌萎缩侧索硬化"
+      },
+      {
+        "en": "second half",
+        "cn": "下半年"
+      }
+    ],
+    "questions": [
+      "哪个药在 ALS？",
+      "下半年有什么期待？"
+    ]
+  },
+  {
+    "id": "D43",
+    "group": "2026 Q2",
+    "title": "M&A and R&D",
+    "titleCn": "并购与研发",
+    "theme": "并购完成与内部研发",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:30",
+    "audioFile": "D43-q2-2026.mp3",
+    "vttFile": "D43-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "acquisition",
+        "cn": "并购"
+      },
+      {
+        "en": "internal R&D",
+        "cn": "内部研发"
+      }
+    ],
+    "questions": [
+      "完成哪两起并购？",
+      "同时投资什么？"
+    ]
+  },
+  {
+    "id": "D44",
+    "group": "2026 Q2",
+    "title": "Slide transition",
+    "titleCn": "幻灯片过渡",
+    "theme": "幻灯片跳转",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "2:32",
+    "audioFile": "D44-q2-2026.mp3",
+    "vttFile": "D44-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "slide",
+        "cn": "幻灯片"
+      }
+    ],
+    "questions": [
+      "这段在做什么？",
+      "为什么内容很少？"
+    ]
+  },
+  {
+    "id": "D45",
+    "group": "2026 Q2",
+    "title": "Q&A: BofA question",
+    "titleCn": "问答：美银提问",
+    "theme": "问答开场",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:37",
+    "audioFile": "D45-q2-2026.mp3",
+    "vttFile": "D45-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "Bank of America",
+        "cn": "美国银行"
+      }
+    ],
+    "questions": [
+      "第一个问题来自哪家机构？",
+      "谁在提问？"
+    ]
+  },
+  {
+    "id": "D46",
+    "group": "2026 Q2",
+    "title": "VHAT discussion",
+    "titleCn": "VHAT 讨论",
+    "theme": "VHAT（转写可能有误）",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D46-q2-2026.mp3",
+    "vttFile": "D46-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "VHAT",
+        "cn": "VHAT（待核对）"
+      }
+    ],
+    "questions": [
+      "这段讨论什么？",
+      "VHAT 可能是转写错误，核对逐字稿"
+    ]
+  },
+  {
+    "id": "D47",
+    "group": "2026 Q2",
+    "title": "Study confidence",
+    "titleCn": "研究信心",
+    "theme": "研究进展与对照",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D47-q2-2026.mp3",
+    "vttFile": "D47-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "active vs control",
+        "cn": "活性对照"
+      },
+      {
+        "en": "performing",
+        "cn": "表现"
+      }
+    ],
+    "questions": [
+      "对研究有什么信心？",
+      "active 和 control 指什么？"
+    ]
+  },
+  {
+    "id": "D48",
+    "group": "2026 Q2",
+    "title": "Trial rates & PCSK9",
+    "titleCn": "试验比例与 PCSK9",
+    "theme": "试验比例与竞品",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D48-q2-2026.mp3",
+    "vttFile": "D48-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "PCSK9",
+        "cn": "PCSK9 抑制剂"
+      },
+      {
+        "en": "creep up",
+        "cn": "攀升"
+      }
+    ],
+    "questions": [
+      "起始比例是多少？",
+      "PCSK9 指什么？"
+    ]
+  },
+  {
+    "id": "D49",
+    "group": "2026 Q2",
+    "title": "Third-party spend",
+    "titleCn": "第三方支出",
+    "theme": "支出优化",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D49-q2-2026.mp3",
+    "vttFile": "D49-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "third-party spend",
+        "cn": "第三方支出"
+      },
+      {
+        "en": "productive",
+        "cn": "有效"
+      }
+    ],
+    "questions": [
+      "第三方支出约多少？",
+      "公司在做什么？"
+    ]
+  },
+  {
+    "id": "D50",
+    "group": "2026 Q2",
+    "title": "Abalacimab confidence",
+    "titleCn": "Abalacimab 信心",
+    "theme": "管线信心",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:32",
+    "audioFile": "D50-q2-2026.mp3",
+    "vttFile": "D50-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "abalacimab",
+        "cn": "阿巴拉西单抗"
+      },
+      {
+        "en": "confidence",
+        "cn": "信心"
+      }
+    ],
+    "questions": [
+      "分析师问哪个药？",
+      "问什么？"
+    ]
+  },
+  {
+    "id": "D51",
+    "group": "2026 Q2",
+    "title": "Peak sales & Europe",
+    "titleCn": "峰值销售与欧洲",
+    "theme": "峰值销售信心",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:33",
+    "audioFile": "D51-q2-2026.mp3",
+    "vttFile": "D51-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "peak sales",
+        "cn": "峰值销售"
+      },
+      {
+        "en": "European Commission",
+        "cn": "欧盟委员会"
+      }
+    ],
+    "questions": [
+      "问什么信心？",
+      "刚拿到什么？"
+    ]
+  },
+  {
+    "id": "D52",
+    "group": "2026 Q2",
+    "title": "Share dynamics",
+    "titleCn": "份额动态",
+    "theme": "市场份额与竞争",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:37",
+    "audioFile": "D52-q2-2026.mp3",
+    "vttFile": "D52-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "market share",
+        "cn": "市场份额"
+      },
+      {
+        "en": "dynamics",
+        "cn": "动态"
+      }
+    ],
+    "questions": [
+      "份额变化原因？",
+      "竞争情况？"
+    ]
+  },
+  {
+    "id": "D53",
+    "group": "2026 Q2",
+    "title": "IgE & Murex",
+    "titleCn": "IgE 与 Murex",
+    "theme": "IgE 靶向与新型载荷",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D53-q2-2026.mp3",
+    "vttFile": "D53-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "IgE",
+        "cn": "免疫球蛋白 E"
+      },
+      {
+        "en": "payload",
+        "cn": "载荷"
+      },
+      {
+        "en": "novel",
+        "cn": "新型"
+      }
+    ],
+    "questions": [
+      "和传统 IgE 疗法有何不同？",
+      "Murex 的特点？"
+    ]
+  },
+  {
+    "id": "D54",
+    "group": "2026 Q2",
+    "title": "Q&A: Deutsche Bank",
+    "titleCn": "问答：德银",
+    "theme": "问答转场",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D54-q2-2026.mp3",
+    "vttFile": "D54-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "Deutsche Bank",
+        "cn": "德意志银行"
+      }
+    ],
+    "questions": [
+      "下一个问题来自哪家？"
+    ]
+  },
+  {
+    "id": "D55",
+    "group": "2026 Q2",
+    "title": "Brief exchange",
+    "titleCn": "简短交流",
+    "theme": "简短问答",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D55-q2-2026.mp3",
+    "vttFile": "D55-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [],
+    "questions": [
+      "这段内容很少，发生了什么？",
+      "核对逐字稿确认"
+    ]
+  },
+  {
+    "id": "D56",
+    "group": "2026 Q2",
+    "title": "P&L & gross margin",
+    "titleCn": "损益与毛利",
+    "theme": "利润率与毛利率",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:32",
+    "audioFile": "D56-q2-2026.mp3",
+    "vttFile": "D56-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "P&L",
+        "cn": "损益"
+      },
+      {
+        "en": "gross margin",
+        "cn": "毛利率"
+      }
+    ],
+    "questions": [
+      "问什么利润率？",
+      "毛利率反映什么？"
+    ]
+  },
+  {
+    "id": "D57",
+    "group": "2026 Q2",
+    "title": "Leqvio sales force",
+    "titleCn": "Leqvio 销售队伍",
+    "theme": "销售队伍与结局试验",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D57-q2-2026.mp3",
+    "vttFile": "D57-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "outcome trial",
+        "cn": "结局试验"
+      },
+      {
+        "en": "sales force",
+        "cn": "销售队伍"
+      }
+    ],
+    "questions": [
+      "明年有什么试验？",
+      "销售队伍用新的还是现有的？"
+    ]
+  },
+  {
+    "id": "D58",
+    "group": "2026 Q2",
+    "title": "Stocking dynamics",
+    "titleCn": "备货动态",
+    "theme": "备货无特定品牌",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:33",
+    "audioFile": "D58-q2-2026.mp3",
+    "vttFile": "D58-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "stocking",
+        "cn": "备货"
+      },
+      {
+        "en": "across the board",
+        "cn": "全面"
+      }
+    ],
+    "questions": [
+      "备货涉及特定品牌吗？",
+      "全面还是局部？"
+    ]
+  },
+  {
+    "id": "D59",
+    "group": "2026 Q2",
+    "title": "Q&A: Goldman Sachs",
+    "titleCn": "问答：高盛",
+    "theme": "问答转场",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:31",
+    "audioFile": "D59-q2-2026.mp3",
+    "vttFile": "D59-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "Goldman Sachs",
+        "cn": "高盛"
+      }
+    ],
+    "questions": [
+      "下一个问题来自谁？"
+    ]
+  },
+  {
+    "id": "D60",
+    "group": "2026 Q2",
+    "title": "Leqvio in China",
+    "titleCn": "Leqvio 中国",
+    "theme": "中国上量",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:35",
+    "audioFile": "D60-q2-2026.mp3",
+    "vttFile": "D60-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "momentum",
+        "cn": "动能"
+      },
+      {
+        "en": "China",
+        "cn": "中国"
+      }
+    ],
+    "questions": [
+      "问哪个药在哪个市场？",
+      "问什么细节？"
+    ]
+  },
+  {
+    "id": "D61",
+    "group": "2026 Q2",
+    "title": "PCSK9 outcomes",
+    "titleCn": "PCSK9 结局试验",
+    "theme": "结局试验与意外",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:30",
+    "audioFile": "D61-q2-2026.mp3",
+    "vttFile": "D61-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "outcomes trial",
+        "cn": "结局试验"
+      },
+      {
+        "en": "surprise",
+        "cn": "意外"
+      }
+    ],
+    "questions": [
+      "提到什么试验？",
+      "有什么意外？"
+    ]
+  },
+  {
+    "id": "D62",
+    "group": "2026 Q2",
+    "title": "CDOX & outcomes",
+    "titleCn": "CDOX 与结局",
+    "theme": "生物标志物与结局",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "2:33",
+    "audioFile": "D62-q2-2026.mp3",
+    "vttFile": "D62-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "CDOX",
+        "cn": "CDOX（标志物）"
+      },
+      {
+        "en": "correlate",
+        "cn": "相关性"
+      }
+    ],
+    "questions": [
+      "CDOX 用来做什么？",
+      "和什么相关？"
+    ]
+  },
+  {
+    "id": "D63",
+    "group": "2026 Q2",
+    "title": "Rapsida access",
+    "titleCn": "Rapsida 准入",
+    "theme": "逐步推进准入",
+    "source": "Novartis 2026 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results",
+    "date": "2026-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "1:45",
+    "audioFile": "D63-q2-2026.mp3",
+    "vttFile": "D63-q2-2026.vtt",
+    "transcriptMode": "ai",
+    "terms": [
+      {
+        "en": "access",
+        "cn": "准入"
+      },
+      {
+        "en": "step-by-step",
+        "cn": "逐步"
+      },
+      {
+        "en": "demand",
+        "cn": "需求"
+      }
+    ],
+    "questions": [
+      "Rapsida 推进策略是什么？",
+      "需求如何？"
     ]
   }
 ]
