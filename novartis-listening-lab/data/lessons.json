@@ -1,0 +1,146 @@
+[
+  {
+    "id": "D1",
+    "title": "Commercial update",
+    "titleCn": "商业更新",
+    "theme": "商业增长、品牌和地区信息",
+    "source": "Novartis 2024 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results/2024-q2-transcript",
+    "date": "2024-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "4:00",
+    "audioFile": "D1-commercial-update.mp3",
+    "vttFile": "D1-commercial-update.vtt",
+    "slide": 6,
+    "terms": [
+      {"en": "weekly TRx", "cn": "每周处方量"},
+      {"en": "core geographies", "cn": "核心地区"},
+      {"en": "LOE (loss of exclusivity)", "cn": "专利到期"}
+    ],
+    "questions": [
+      "Entresto 的美国和除美外两个增长率分别是多少？",
+      "除美以外，哪两个国家贡献了增长？",
+      "对 Entresto LOE 的时间假设是什么？"
+    ]
+  },
+  {
+    "id": "D2",
+    "title": "Brand growth",
+    "titleCn": "品牌增长",
+    "theme": "连续品牌更新与增长驱动",
+    "source": "Novartis 2024 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results/2024-q2-transcript",
+    "date": "2024-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "4:00",
+    "audioFile": "D2-brand-growth.mp3",
+    "vttFile": "D2-brand-growth.vtt",
+    "slide": 7,
+    "terms": [
+      {"en": "peak sales guidance", "cn": "峰值销售指引"},
+      {"en": "franchise", "cn": "产品线/业务集群"},
+      {"en": "in-line brand", "cn": "在售品牌"}
+    ],
+    "questions": [
+      "本段提到哪个品牌的增长数据？",
+      "发言人对该品牌的峰值销售预期是什么？",
+      "有没有给出时间表或里程碑？"
+    ]
+  },
+  {
+    "id": "D3",
+    "title": "Analyst question",
+    "titleCn": "分析师提问",
+    "theme": "识别提问与管理层回答",
+    "source": "Novartis 2024 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results/2024-q2-transcript",
+    "date": "2024-07",
+    "speaker": "Analyst + Novartis management (Q&A)",
+    "duration": "4:00",
+    "audioFile": "D3-analyst-question-1.mp3",
+    "vttFile": "D3-analyst-question-1.vtt",
+    "slide": 13,
+    "terms": [
+      {"en": "guidance", "cn": "业绩指引"},
+      {"en": "consensus", "cn": "市场一致预期"},
+      {"en": "reiterate", "cn": "重申"}
+    ],
+    "questions": [
+      "分析师问的是什么主题？",
+      "管理层的立场是确认、修正还是回避？",
+      "管理层给出了什么后续安排或限定条件？"
+    ]
+  },
+  {
+    "id": "D4",
+    "title": "Market opportunity",
+    "titleCn": "市场机会",
+    "theme": "事实、观点与市场判断",
+    "source": "Novartis 2024 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results/2024-q2-transcript",
+    "date": "2024-07",
+    "speaker": "Novartis management (prepared remarks)",
+    "duration": "4:20",
+    "audioFile": "D4-market-opportunity.mp3",
+    "vttFile": "D4-market-opportunity.vtt",
+    "slide": 15,
+    "terms": [
+      {"en": "market opportunity", "cn": "市场机会"},
+      {"en": "addressable population", "cn": "可及人群"},
+      {"en": "pipeline", "cn": "研发管线"}
+    ],
+    "questions": [
+      "本段描述的是哪个市场机会？",
+      "哪些是事实（数据）、哪些是观点（判断）？",
+      "发言人对机会的时间预期是确定还是条件性？"
+    ]
+  },
+  {
+    "id": "D5",
+    "title": "Uptake barriers",
+    "titleCn": "采用障碍",
+    "theme": "采用障碍与条件表达",
+    "source": "Novartis 2024 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results/2024-q2-transcript",
+    "date": "2024-07",
+    "speaker": "Novartis management (prepared remarks / Q&A)",
+    "duration": "5:00",
+    "audioFile": "D5-uptake-barriers.mp3",
+    "vttFile": "D5-uptake-barriers.vtt",
+    "slide": 18,
+    "terms": [
+      {"en": "uptake", "cn": "采用/上量"},
+      {"en": "access", "cn": "市场准入"},
+      {"en": "reimbursement", "cn": "医保报销"}
+    ],
+    "questions": [
+      "提到的主要采用障碍是什么？",
+      "发言人对克服障碍用的是承诺语气还是条件语气？",
+      "有没有给出明确的解决时间或负责人？"
+    ]
+  },
+  {
+    "id": "D6",
+    "title": "Commercial execution",
+    "titleCn": "商业执行",
+    "theme": "多人问答与行动逻辑",
+    "source": "Novartis 2024 Q2 Investor Presentation & Q&A",
+    "sourceUrl": "https://www.novartis.com/investors/financial-data/quarterly-results/2024-q2-transcript",
+    "date": "2024-07",
+    "speaker": "Multiple analysts + Novartis management (Q&A)",
+    "duration": "5:30",
+    "audioFile": "D6-commercial-execution.mp3",
+    "vttFile": "D6-commercial-execution.vtt",
+    "slide": 21,
+    "terms": [
+      {"en": "execution", "cn": "执行"},
+      {"en": "milestone", "cn": "里程碑"},
+      {"en": "action item", "cn": "行动项"}
+    ],
+    "questions": [
+      "本段讨论的是哪项商业执行？",
+      "不同发言人的立场是否一致？",
+      "明确了哪些行动项和负责人/时间？"
+    ]
+  }
+]
