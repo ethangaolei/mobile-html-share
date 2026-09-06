@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Listening Skill · Novartis Audio Library</title>
+<style>
+:root{--ink:#17223b;--blue:#0460a9;--mint:#e9f5f5;--line:#d7e1ec;--orange:#f58025}*{box-sizing:border-box}body{margin:0;background:#f5f8fb;color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}.wrap{max-width:720px;margin:auto;padding:24px 16px 48px}header{padding:12px 4px 22px}h1{font-size:27px;line-height:1.15;margin:0 0 9px;color:#003b70}header p{margin:0;color:#526477}.flow{background:var(--mint);border-left:4px solid var(--blue);padding:13px 15px;border-radius:8px;margin:0 0 22px}.flow b{display:block;color:#003b70}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:17px;margin:12px 0;box-shadow:0 2px 5px #102a4310}.tag{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.04em;text-transform:uppercase}.card h2{font-size:18px;margin:5px 0}.meta{margin:0 0 13px;color:#586a7e;font-size:14px}audio{width:100%;height:44px}.hint{font-size:13px;color:#627386;margin:9px 0 0}.second{margin-top:10px;border:0;background:#eef5fa;color:#004f8d;padding:9px 11px;border-radius:8px;font-weight:600}.caption{display:none;margin:10px 0 0;padding:10px;background:#fff8ec;border-radius:8px;font-size:14px}.caption.show{display:block}footer{font-size:12px;color:#68798b;padding:17px 4px}a{color:var(--blue)}
+</style>
+</head>
+<body><main class="wrap"><header><h1>Listening Skill</h1><p>Novartis Audio Library · Week 1</p></header><section class="flow"><b>每段听两遍</b>第一遍：直接播放，不看文字。<br>第二遍：播放同一段，点击“第二遍字幕辅助”，并按提示开启手机英文实时字幕。</section><div id="list"></div><footer>来源：Novartis 2024 Q2 Investor Presentation &amp; Q&amp;A（2024-07）。仅供个人英语学习；内容为历史信息，并不代表当前业务状态。</footer></main><script>
+const tracks=[['D1-commercial-update.mp3','D1 · Commercial update','4:00','商业增长、品牌和地区信息'],['D2-brand-growth.mp3','D2 · Brand growth','4:00','连续品牌更新与增长驱动'],['D3-analyst-question-1.mp3','D3 · Analyst question','4:00','识别提问与管理层回答'],['D4-market-opportunity.mp3','D4 · Market opportunity','4:20','事实、观点与市场判断'],['D5-uptake-barriers.mp3','D5 · Uptake barriers','5:00','采用障碍与条件表达'],['D6-commercial-execution.mp3','D6 · Commercial execution','5:30','多人问答与行动逻辑']];
+document.querySelector('#list').innerHTML=tracks.map(([f,t,d,h])=>`<article class="card"><span class="tag">${d}</span><h2>${t}</h2><p class="meta">训练重点：${h}</p><audio controls preload="metadata"><source src="audio/${f}" type="audio/mpeg"></audio><button class="second" onclick="this.nextElementSibling.classList.toggle('show')">第二遍字幕辅助</button><div class="caption">在 iPhone：<b>设置 → 辅助功能 → 实时字幕</b>，开启后在字幕浮窗选择 <b>iPhone 音频</b>，再播放这一段。字幕只用于核对数字、转折、人物立场和行动项。</div></article>`).join('');
+</script></body></html>
