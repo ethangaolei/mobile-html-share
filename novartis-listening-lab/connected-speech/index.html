@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#003b70">
+<meta name="description" content="NVS 高管连读与弱读练习：30 个语块、60 个商务例句，逐句听辨、四档语速与分析师提问专项。">
+<title>NVS Executive Connected Speech Lab</title>
+<link rel="stylesheet" href="style.css">
+<script src="content.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<main class="wrap">
+<header><a href="https://ethangaolei.github.io/mobile-html-share/novartis-listening-lab/" class="back">‹ Listening Lab 课程目录</a><span class="brand">NVS Listening</span></header>
+<div class="intro"><h1>Executive<br>Connected Speech Lab</h1><p>听懂语块，跟上商务对话。</p><span class="inventory">30 个语块 · 60 个例句</span></div>
+<section class="daily" aria-label="每日训练"><div><b>每天 20 分钟</b><p id="daily-progress">今天已听完 0 / 60 句</p></div><div class="timer-group"><output id="timer" aria-label="剩余训练时间">20:00</output><button id="timer-toggle" type="button">开始计时</button></div></section>
+<section class="controls" aria-label="训练设置">
+<label for="scope">练什么</label><select id="scope"><option value="all">全部 30 组 · 60 句</option><option value="core">核心 14 组 · 28 句</option><option value="analyst">Analyst Question · 4 句</option></select>
+<div class="mode-row"><button id="blind" aria-pressed="false" type="button">只听不看</button><button id="random" type="button">随机训练</button></div>
+<div class="speed-row" aria-label="语速"><span>语速</span><div class="speeds"><button data-rate="0.72" aria-pressed="false">72%</button><button data-rate="0.82" aria-pressed="true">82%</button><button data-rate="0.95" aria-pressed="false">95%</button><button data-rate="1.05" aria-pressed="false">105%</button></div></div>
+</section>
+<section class="trainer" aria-label="当前例句">
+<div class="card-top"><span id="position">第 1 / 60 句</span><span id="category">核心语块</span></div>
+<div id="answer"><h2 id="phrase" lang="en"></h2><p id="sentence" lang="en"></p><div class="sound-note"><span>听这里</span><p id="sound" lang="en"></p><p id="cue"></p><p id="function"></p></div></div>
+<div id="hidden-answer" hidden><div class="listening-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h2>先听，再揭晓</h2><p>听两遍，试着说出核心语块和业务意思。</p></div>
+<button id="reveal" type="button" hidden>显示原文</button>
+<div class="status-row"><span id="status" role="status" aria-live="polite">点击下方播放，先听两遍。</span><span id="plays">本句听完 0 次</span></div>
+<progress id="audio-progress" value="0" max="1" aria-label="播放进度"></progress>
+<div id="audio-recovery" hidden><p>音频未能播放。请检查媒体音量和网络，再点重试，也可使用英文语音备用播放。</p><button id="tts-play">备用英文语音</button><audio id="native-audio" controls preload="none"></audio></div>
+</section>
+<nav class="playbar" aria-label="播放控制"><button id="previous" aria-label="上一句">‹</button><button id="play" class="primary">▶ 播放本句</button><button id="stop">停止</button><button id="next" aria-label="下一句">›</button></nav>
+<details id="library"><summary>选择语块 / 逐句播放 <span id="library-count">30 组</span></summary><div class="library-head"><label for="search">查找语块</label><input id="search" type="search" placeholder="例如：we continue to" autocomplete="off"></div><div id="groups"></div></details>
+<details class="guide"><summary>20 分钟怎么练</summary><ol><li>前 5 分钟：核心 14 组，82% 语速，先听不看。</li><li>中间 10 分钟：显示原文核对，再用 95% 跟读两遍。</li><li>最后 5 分钟：随机训练或 Analyst Question，试用 105%。</li></ol><p>语流标记是近似提示。实际弱读和连读随口音与重音变化；放慢语速会帮助听辨，但不会重新设计每个音的弱化。</p></details>
+<footer><p>保留原版 30 组和 60 句。例句用于 NVS / investor-call 商务场景训练，非官方发言逐字引用；音频为合成英语语音，非诺华高管原声。</p><p>进度保存在当前浏览器。手机请在 Safari 或 Chrome 打开此网页，并检查媒体音量。</p><p><a href="https://ethangaolei.github.io/mobile-html-share/novartis-listening-lab/">返回原声听力课程</a></p></footer>
+<noscript><p>请在 Safari 或 Chrome 打开网站，并允许 JavaScript，才能使用语音训练。</p></noscript>
+</main>
+</body></html>

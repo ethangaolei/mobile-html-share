@@ -221,6 +221,7 @@ INDEX_TMPL = """<!doctype html>
   <span class="sub">诺华高管发言 · 商务英语听力</span>
 </header>
 <main>
+<section class="grp" aria-label="连读弱读专项"><h2>连读 / 弱读专题</h2><ol class="lesson-list"><li><a href="connected-speech/"><span class="num">🎧</span><span class="info"><h2>Executive Connected Speech Lab</h2><p>30 个语块 · 60 句 · 四档语速 · 只听不看 · Analyst Question</p></span><span class="dur">20 min</span></a></li></ol></section>
   <p style="color:var(--muted);font-size:14px;margin:0 0 14px">诺华高管发言 · 商务英语听力。每段听两遍：第一遍裸听抓大意，第二遍开英文字幕对位，再用逐字稿核对。</p>
 {groups}
   <p style="font-size:12px;color:#8295a8;margin-top:18px">来源：Novartis 2024 Q2、2026 Q1/Q2 Investor Presentation。2024 逐字稿为诺华官方文本，2026 逐字稿为 AI 转写（非官方）；字幕均由 AI 本地转写。仅供个人英语学习，内容为历史信息，不代表当前业务状态。</p>
