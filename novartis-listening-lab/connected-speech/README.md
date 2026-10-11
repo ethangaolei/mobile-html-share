@@ -1,11 +1,19 @@
-# NVS Executive Connected Speech Lab
+# NVS Executive Connected Speech Lab — 原声版
 
-入口：https://ethangaolei.github.io/mobile-html-share/novartis-listening-lab/connected-speech/
+入口：https://ethangaolei.github.io/mobile-html-share/novartis-listening-lab/connected-speech/?v=20261011
 
-原始 30 组、60 句于 2026-10-07 从「商务英语连读清单」原 HTML 浏览器预览逐项恢复；核心组为第 1—14 组，Analyst Question 为第 29—30 组。例句为训练材料，不是诺华官方逐字引用。
+2026-10-11：修复手机音频加载失败后重试不发请求的问题，去除 flatMap / replaceChildren 依赖，增加脚本加载失败提示、原生音频恢复入口、静态首句和资源版本号。音频仍只由点击触发，不自动播放。无需 API key、安装依赖或后端。
 
-无需 API key、安装依赖或服务器后端。直接作为 GitHub Pages 静态目录发布。语音是 Mac 已安装 Samantha 合成英文语音，175 words/min，预生成 60 个单声道 22050Hz WAV。播放器使用实际音频文件及保留音高的 playbackRate；备用英文 TTS 仅在播放失败时可选。
+内容改为已有诺华 2024 Q2、2026 Q1 和 Q2 投资者电话会议的连续真人录音片段。30 组、57 条练习；第 11、24、27 组各一个可靠例子，其余各两个。跨语块可能复用同一段原声。核心 14 组 27 条，分析师提问 2 组 4 条。第 29–30 组标明分析师，其他为管理层。2024 年管理层片段来自 Vas Narasimhan 的发言；2026 年不对未经核对的具体姓名作断言。
 
-手机：在 Safari / Chrome 打开 HTTPS 入口，点播放开始；不依赖 HTML 文件预览。只听不看会隐藏例句、语块提示和目录，切换句子重新隐藏。随机在当前筛选范围内抽句，当前一轮内不重复。已听完句数按本地日期记录在当前浏览器，不跨设备同步。切到后台会停止播放。20 分钟计时从用户点击开始，支持暂停与继续，刷新后重置。
+保留原始语序，不跨发言剪接单词或造句，不生成、克隆或合成语音。文字为本地语音识别辅助听写，非官方逐字稿，以录音为准。原录音、官方会议来源、日期、课程片段中的起止秒数均显示在每条练习下。历史业务信息不代表当前情况。
 
-文件：index.html / style.css / app.js / content.js / audio/*.wav。原 Listening Lab 首页和 build.py 已加入持久的专题入口。
+音频：单声道 AAC-LC / M4A 为首选，PCM WAV 为用户点击切换的兼容备用。播放使用 HTMLAudioElement 与保留音高的 playbackRate。重试显式重新设置来源并调用 load()；不通过异步等待绕过手机的用户手势要求。全部资源同源相对路径；无外部字体、CDN、API、Service Worker 或 PWA 安装依赖。
+
+original-audio-manifest.json 记录每条练习的原始录音文件、哈希、起止点、输出 WAV 哈希和时长。源音频均复用 ../assets/audio/ 中已有的真人课程录音。
+
+手机在 Safari / Chrome 打开 HTTPS 链接后手动点播放。微信或 ChatGPT 内置浏览器打不开/不播放时，复制链接到系统浏览器。若页面本身无法连接，切换 Wi-Fi / 蜂窝网络检查 GitHub Pages 连通性；静态代码不能解决运营商或网络阻断。
+
+播放速度、盲听、筛选、随机、计时、听完统计保留。原声版使用独立存储键，避免把旧机器音频训练进度混入本版。进度保存在当前浏览器；后台停止播放。
+
+验证范围：移动尺寸 Chromium 自动播放与故障恢复测试、桌面 Safari / Chrome 检查，以及线上资源状态和音频分段下载。实体手机验证需在用户设备上完成。
